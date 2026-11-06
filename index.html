@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LinkDit | Muhammad Mudassar Elahi – Web Designer &amp; Developer</title>
+<meta name="description" content="LinkDit – Muhammad Mudassar Elahi, web designer and developer. Custom websites and Shopify stores.">
+<link rel="icon" href="images/logo.jpg">
+<meta name="theme-color" content="#07080b">
+<meta property="og:type" content="website"><meta property="og:title" content="LinkDit – Muhammad Mudassar Elahi | Web Designer &amp; Developer">
+<meta property="og:description" content="Custom websites and Shopify stores that look premium, load fast and sell.">
+<meta property="og:image" content="images/logo.jpg"><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Mudassar Elahi","jobTitle":"Web Designer & Shopify Developer","brand":"LinkDit","email":"elahimudassasr1@gmail.com","telephone":"+923197013743"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080b;--surface:#111318;--text:#f4f1ea;--muted:#9a9da6;--gold:#f0a52a;--gold2:#ffd27a;--line:#23262e;--on-gold:#1a1204;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#faf7f0;--surface:#fff;--text:#16130c;--muted:#6b665a;--gold:#c47f0a;--gold2:#e6a52e;--line:#e6dfcf;--on-gold:#fff;color-scheme:light}}
+:root[data-theme="dark"]{--bg:#07080b;--surface:#111318;--text:#f4f1ea;--muted:#9a9da6;--gold:#f0a52a;--gold2:#ffd27a;--line:#23262e;--on-gold:#1a1204}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3,.brand{font-family:"Space Grotesk",system-ui,sans-serif;margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-weight:700;font-size:1.25rem;letter-spacing:.04em}
+.brand b{color:var(--gold)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:38px;height:38px;flex:none;filter:drop-shadow(0 4px 14px color-mix(in srgb,var(--gold) 45%,transparent));transition:transform .5s}
+.brand:hover svg{transform:rotate(-8deg) scale(1.08)}
+.brand .wm{display:flex;flex-direction:column;line-height:1}
+.brand .wm span{font-size:1.3rem;letter-spacing:.02em}
+.brand .wm span b{background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .wm small{font-family:Inter,sans-serif;font-size:.54rem;letter-spacing:.32em;color:var(--muted);margin-top:5px;font-weight:500;text-transform:uppercase}
+.links{display:flex;gap:24px;font-size:.92rem;color:var(--muted)}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:12px 24px;border-radius:12px;font-weight:500;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--on-gold);transition:transform .2s,box-shadow .2s;border:0}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px -10px var(--gold)}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text)}
+.btn.ghost:hover{border-color:var(--gold);box-shadow:none}
+.hero{padding:70px 0 60px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.hero::before{content:"";position:absolute;width:460px;height:460px;right:-100px;top:-60px;background:radial-gradient(circle,var(--gold),transparent 70%);opacity:.22;filter:blur(50px);animation:float 8s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-30px,30px)}}
+.tag{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:99px;color:var(--gold);font-size:.82rem;margin-bottom:20px}
+h1{font-size:clamp(2.1rem,5.5vw,3.6rem);line-height:1.1}
+h1 span{background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.06rem;margin:20px 0 30px;max-width:520px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+.stats b{font-family:"Space Grotesk";font-size:1.7rem;display:block;color:var(--gold)}
+.stats small{color:var(--muted)}
+.logo{width:100%;max-width:400px;justify-self:center;border-radius:28px;border:1px solid var(--line);animation:bob 6s ease-in-out infinite;position:relative}
+@keyframes bob{50%{transform:translateY(-10px)}}
+section{padding:66px 0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:10px}
+h2::after{content:"";display:block;width:54px;height:3px;background:var(--gold);margin-top:10px;border-radius:3px}
+.sub{color:var(--muted);margin:14px 0 34px;max-width:540px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .3s,border-color .3s;display:block}
+.card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.card h3{font-size:1.15rem;margin:10px 0 8px}
+.card p{margin:0;color:var(--muted);font-size:.94rem}
+.ico{font-size:1.6rem}
+.proj{padding:14px}
+.proj img{width:100%;height:auto;border-radius:12px;display:block;border:1px solid var(--line);margin-bottom:14px}
+.proj .t{padding:0 8px 8px}
+.pill{display:inline-block;font-size:.75rem;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--gold);margin:12px 6px 0 0}
+.visit{display:inline-block;margin-top:12px;color:var(--gold);font-size:.9rem}
+.step b{font-family:"Space Grotesk";color:var(--gold);font-size:1.6rem}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:46px 24px;text-align:center}
+.contact h2::after{margin-left:auto;margin-right:auto}
+.contact .sub{margin:14px auto 0}
+.contact .cta{justify-content:center;margin-top:24px}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (max-width:760px){.links{display:none}.hero .wrap{grid-template-columns:1fr}.logo{order:-1;max-width:260px}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero::before,.logo{animation:none}}
+
+:root[data-theme="light"]{--bg:#faf7f0;--surface:#fff;--text:#16130c;--muted:#6b665a;--gold:#c47f0a;--gold2:#e6a52e;--line:#e6dfcf;--on-gold:#fff;color-scheme:light}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold2),var(--gold));z-index:50}
+#glow{position:fixed;width:380px;height:380px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,var(--gold),transparent 70%);opacity:.1;transform:translate(-50%,-50%);left:-999px;top:-999px;z-index:0}
+.navr{display:flex;gap:10px;align-items:center}
+#tg{background:none;border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1rem}
+#tg:hover{border-color:var(--gold)}
+#rot{display:inline-block;transition:opacity .35s}
+.mq{overflow:hidden;padding:26px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq div{display:flex;width:max-content;animation:mq 36s linear infinite;font-family:"Space Grotesk";white-space:nowrap}
+.mq div:hover{animation-play-state:paused}
+.mq span{display:flex;align-items:center;gap:10px;margin-right:16px;padding:11px 22px;border:1px solid var(--line);border-radius:99px;background:var(--surface);color:var(--text);font-size:.95rem;transition:.25s}
+.mq span i{font-style:normal;font-size:1.15rem}
+.mq span:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 24px -12px var(--gold)}
+@keyframes mq{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.ab .sub{max-width:none}
+.ab .grid{grid-template-columns:1fr 1fr}
+.ab .card{padding:18px}.ab .card h3{font-size:1rem;margin:6px 0 0}
+.flt{display:flex;gap:10px;margin:-10px 0 26px;flex-wrap:wrap}
+.flt button{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 18px;border-radius:99px;cursor:pointer;font:inherit}
+.flt button.on{background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
+.proj.hide{display:none}
+.proj img{cursor:zoom-in}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:60;padding:20px;cursor:zoom-out}
+#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border-radius:12px}
+.faq{max-width:760px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:1.2rem}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin:12px 0 0}
+.fm{display:grid;gap:12px;max-width:520px;margin:26px auto 0;text-align:left}
+.fm input,.fm textarea{width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+.fm input:focus,.fm textarea:focus{outline:none;border-color:var(--gold)}
+.wa{position:fixed;right:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:40;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .2s}
+.wa:hover{transform:scale(1.1)}
+@media (max-width:760px){.ab{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.mq div{animation:none}}
+
+#pre{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s,visibility .5s}
+#pre.out{opacity:0;visibility:hidden}#pre img{width:110px;border-radius:24px;animation:bob 2s ease-in-out infinite}
+#pre b{font-family:"Space Grotesk";color:var(--gold);font-size:1.3rem}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.cur{display:inline-block;width:3px;height:.85em;background:var(--gold);margin-left:4px;vertical-align:-.04em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.tilt{justify-self:center;width:100%;max-width:400px;transition:transform .15s}
+#cr{display:none;position:fixed;width:42px;height:42px;left:-99px;top:-99px;transform:translate(-50%,-50%);pointer-events:none;z-index:70;border-radius:50%;transition:width .25s,height .25s;filter:drop-shadow(0 0 7px color-mix(in srgb,var(--gold) 55%,transparent))}
+.fine #cr{display:block}
+#cr::before{content:"";position:absolute;inset:0;border-radius:50%;padding:2px;background:conic-gradient(from 0deg,var(--gold2),transparent 32%,var(--gold),transparent 68%,var(--gold2));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:crs 3s linear infinite}
+#cr::after{content:"";position:absolute;inset:12px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--gold) 30%,transparent),transparent 70%);transition:inset .25s,background .25s}
+#cr.big{width:68px;height:68px}
+#cr.big::after{inset:6px;background:radial-gradient(circle,color-mix(in srgb,var(--gold) 22%,transparent),transparent 72%)}
+@keyframes crs{to{transform:rotate(360deg)}}
+.card{position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--gold) 15%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::after{opacity:1}
+.proj.rv.in{transition:opacity .7s,transform .12s}
+.links a.act{color:var(--gold)}
+#kb{background:none;border:1px solid var(--line);color:var(--muted);height:38px;padding:0 12px;border-radius:10px;cursor:pointer;font:inherit;font-size:.85rem}
+#kb:hover{border-color:var(--gold);color:var(--gold)}
+#cp{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh;z-index:90}
+#cp.on{display:flex}#cp .box{width:min(520px,92vw);background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+#cpi{width:100%;padding:16px 18px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--text);font:inherit;outline:none}
+#cpl{max-height:50vh;overflow:auto;padding:6px}
+#cpl button{display:block;width:100%;text-align:left;padding:11px 14px;border:0;background:none;color:var(--text);font:inherit;border-radius:10px;cursor:pointer}
+#cpl button:hover,#cpl button:first-child{background:color-mix(in srgb,var(--gold) 14%,transparent)}
+.pl{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+.pl h3{font-size:1rem;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.chips button{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:99px;cursor:pointer;font:inherit;font-size:.9rem;transition:.2s}
+.chips button:hover{border-color:var(--gold)}
+.chips button.on{background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
+.sum pre{white-space:pre-wrap;font:inherit;color:var(--muted);min-height:96px;margin:0 0 18px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--gold);color:var(--on-gold);padding:10px 18px;border-radius:99px;opacity:0;transition:.3s;z-index:80;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:760px){.tilt{order:-1;max-width:260px}.pl{grid-template-columns:1fr}}
+
+[hidden]{display:none!important}
+.pf{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.pf img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.pf b{display:block;font-family:"Space Grotesk"}.pf small{color:var(--muted)}
+.cs ul{padding-left:18px;color:var(--muted);font-size:.92rem;margin:10px 0}
+.cs li{margin:4px 0}
+.sk{display:flex;flex-wrap:wrap;gap:10px}
+.sk span{padding:9px 16px;border:1px solid var(--line);border-radius:99px;background:var(--surface);font-size:.9rem;transition:.2s}
+.sk span:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.pr .price{font-family:"Space Grotesk";font-size:2rem;color:var(--gold);margin:6px 0 0}
+.pr .price small{font-size:.85rem;color:var(--muted);font-family:Inter}
+.pr ul{list-style:none;padding:0;margin:16px 0 22px}
+.pr li{padding:6px 0;color:var(--muted);font-size:.92rem}
+.pr li::before{content:"✓ ";color:var(--gold)}
+.pr .btn{width:100%;text-align:center}
+.pr.pop{border-color:var(--gold)}
+.pr.pop::before{content:"Most popular";position:absolute;top:14px;right:14px;background:var(--gold);color:var(--on-gold);font-size:.72rem;padding:3px 10px;border-radius:99px}
+.note{color:var(--muted);font-size:.88rem;margin-top:18px}
+.au{display:flex;gap:10px;max-width:560px;margin:22px auto 0;flex-wrap:wrap}
+.au input{flex:1;min-width:210px;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+.au input:focus{outline:none;border-color:var(--gold)}
+.qt p{font-size:1rem;color:var(--text)}.qt small{color:var(--muted)}
+
+/* VIP refresh */
+main{counter-reset:s}
+section h2:not(.contact h2){counter-increment:s}
+section h2:not(.contact h2)::before{content:counter(s,decimal-leading-zero) "  —  LINKDIT";display:block;font:500 .72rem Inter,sans-serif;letter-spacing:.32em;color:var(--gold);margin-bottom:10px}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:700;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.12}
+h1 span{font-style:italic}
+h2::after{width:72px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.stats b,.pr .price{font-family:"Playfair Display",Georgia,serif}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.6'/></svg>")}
+header{border-bottom:1px solid transparent;border-image:linear-gradient(90deg,transparent,color-mix(in srgb,var(--gold) 55%,transparent),transparent) 1}
+footer{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,color-mix(in srgb,var(--gold) 45%,transparent),transparent) 1}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(color-mix(in srgb,var(--gold) 9%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--gold) 9%,transparent) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 30% 40%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 30% 40%,#000,transparent 70%)}
+.card{background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 6%,var(--surface)),var(--surface) 55%);border:1px solid color-mix(in srgb,var(--gold) 20%,var(--line));box-shadow:0 22px 50px -32px rgba(0,0,0,.55)}
+.card:hover{box-shadow:0 26px 60px -28px color-mix(in srgb,var(--gold) 45%,transparent)}
+.pr.pop{transform:scale(1.03);border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 30px 70px -30px var(--gold)}
+.pr.pop:hover{transform:scale(1.03) translateY(-6px)}
+.logo{border:1px solid color-mix(in srgb,var(--gold) 50%,var(--line));box-shadow:0 0 0 9px color-mix(in srgb,var(--gold) 7%,transparent),0 30px 80px -34px var(--gold)}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s}
+.btn:hover::after{left:135%}
+.tag{background:color-mix(in srgb,var(--gold) 8%,transparent);border-color:color-mix(in srgb,var(--gold) 35%,var(--line))}
+.contact{background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 9%,var(--surface)),var(--surface));border-color:color-mix(in srgb,var(--gold) 30%,var(--line))}
+
+.st{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:start}
+.stc:hover{transform:none}
+.stc h3{font-size:1rem;margin:0 0 10px}
+.stc input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;margin-bottom:22px}
+.stc input:focus{outline:none;border-color:var(--gold)}
+.sw{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap}
+.sw button{width:34px;height:34px;border-radius:50%;border:2px solid var(--surface);cursor:pointer;outline:2px solid var(--line);transition:.2s}
+.sw button:hover{transform:scale(1.12)}.sw button.on{outline-color:var(--gold)}
+.sch{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.sch button{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:99px;cursor:pointer;font:inherit;font-size:.9rem;transition:.2s}
+.sch button:hover{border-color:var(--gold)}.sch button.on{background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
+.stc .btn{width:100%;text-align:center;margin-bottom:10px}
+.mock{--mc:#f0a52a;--mbg:#fff;--mtx:#16130c;--mcd:#f3f0e8;--mf:"Playfair Display",serif;--mr:4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--mbg);color:var(--mtx);transition:background .3s,color .3s;box-shadow:0 30px 70px -40px var(--gold)}
+.mock[data-m="dark"]{--mbg:#0d0f14;--mtx:#f2efe8;--mcd:#171a22}
+.mock[data-s="mod"]{--mf:Inter,sans-serif;--mr:14px}
+.mock[data-s="bold"]{--mf:"Space Grotesk",sans-serif;--mr:0px}
+.mb{display:flex;align-items:center;gap:6px;padding:10px 14px;background:rgba(127,127,127,.14)}
+.mb i{width:9px;height:9px;border-radius:50%;background:#888;opacity:.55}
+.mb span{flex:1;text-align:center;font-size:.72rem;opacity:.7}
+.ms{padding:18px}
+.ms nav{display:flex;align-items:center;gap:18px;font-size:.8rem;margin-bottom:16px}
+.ms nav b{margin-right:auto;font:700 1.05rem var(--mf);color:var(--mc);transition:color .3s}
+.ms nav span{opacity:.7}
+.mh{background:linear-gradient(135deg,var(--mc),color-mix(in srgb,var(--mc) 35%,#000));color:#fff;padding:28px 22px;border-radius:var(--mr);transition:.3s}
+.mh small{letter-spacing:.3em;font-size:.6rem;opacity:.85}
+.mh h4{margin:6px 0 14px;font:700 1.5rem var(--mf);color:#fff}
+.mh a,.pc a{display:inline-block;cursor:pointer;border-radius:var(--mr);font-size:.75rem;transition:.2s}
+.mh a{background:#fff;color:#111;padding:8px 16px}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.pc{background:var(--mcd);border-radius:var(--mr);padding:10px;text-align:center;transition:.3s}
+.pc .im{height:74px;border-radius:var(--mr);display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,color-mix(in srgb,var(--mc) 30%,var(--mcd)),var(--mcd))}
+.pc p{margin:8px 0 2px;font:600 .8rem var(--mf)}
+.pc b{display:block;font-size:.75rem;opacity:.75;margin-bottom:8px}
+.pc a{background:var(--mc);color:#fff;padding:6px 10px;width:100%}
+.pc a:hover{filter:brightness(1.1)}
+.mock[data-s="lux"] .mh a,.mock[data-s="lux"] .pc a{letter-spacing:.14em;text-transform:uppercase;font-size:.6rem}
+.mock[data-s="bold"] .pc{border:2px solid var(--mtx)}
+.mock[data-s="bold"] .mh h4{text-transform:uppercase}
+.cf{position:fixed;width:8px;height:12px;z-index:75;pointer-events:none;animation:cf 1s ease-out forwards}
+@keyframes cf{to{transform:translate(var(--x),var(--y)) rotate(540deg);opacity:0}}
+@media (max-width:760px){.st{grid-template-columns:1fr}.ms nav span{display:none}.ms nav b{margin:0}.ms nav .ct{display:inline}}
+
+.stc{margin-bottom:0}
+@media (min-width:761px){.stc{position:sticky;top:90px}}
+.sw input[type=color]{width:34px;height:34px;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;outline:2px dashed var(--line);outline-offset:2px}
+.sw input[type=color]::-webkit-color-swatch-wrapper{padding:0}
+.sw input[type=color]::-webkit-color-swatch{border:0;border-radius:50%}
+.mock{position:relative}
+.mock.ph{max-width:310px;margin:0 auto;border:7px solid #1b1d22;border-radius:34px}
+.mock.ph .mg{grid-template-columns:1fr 1fr}.mock.ph .mg .pc:nth-child(3){grid-column:1/-1}
+.mock.ph .ms nav span:not(.ct){display:none}.mock.ph .mh h4{font-size:1.2rem}
+.ann{display:none;background:var(--mtx);color:var(--mbg);text-align:center;font-size:.6rem;letter-spacing:.2em;padding:7px}
+.x-bar .ann{display:block}
+.he{display:none;font-size:3.4rem}
+.mock[data-l="spl"] .mh{display:flex;align-items:center;justify-content:space-between}
+.mock[data-l="spl"] .he{display:block}
+.mock[data-l="min"] .mh{background:none;color:var(--mtx);padding:22px 4px;border-bottom:2px solid var(--mc);border-radius:0}
+.mock[data-l="min"] .mh h4{color:var(--mtx)}
+.mock[data-l="min"] .mh a{background:var(--mc);color:#fff}
+.pc{position:relative}
+.pc .sb{display:none;position:absolute;top:16px;left:16px;background:#e11d48;color:#fff;font-size:.55rem;padding:2px 7px;border-radius:99px;z-index:1}
+.x-sale .sb{display:block}
+.pc .stars{display:none;color:#f5b301;font-size:.65rem}
+.x-rev .stars{display:block}
+.pc s{opacity:.5;font-weight:400}
+.ms nav .ct{cursor:pointer;opacity:1;font-weight:600}
+.ms nav .ct:hover{color:var(--mc)}
+.dr{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.3s;z-index:5}
+.dr .pn{position:absolute;right:0;top:0;bottom:0;width:min(280px,82%);background:var(--mbg);color:var(--mtx);padding:16px;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;gap:10px;overflow:auto;font-size:.85rem}
+.co .dr{opacity:1;pointer-events:auto}.co .dr .pn{transform:none}
+.pn .cx{background:none;border:0;color:inherit;cursor:pointer;font-size:1rem}
+.ci{display:flex;align-items:center;gap:8px;font-size:.78rem;padding:8px 0;border-bottom:1px solid rgba(127,127,127,.25)}
+.ci span:nth-child(2){flex:1}
+.ci button{width:22px;height:22px;border-radius:50%;border:1px solid rgba(127,127,127,.5);background:none;color:inherit;cursor:pointer}
+.tot{display:flex;justify-content:space-between;font-weight:600;margin-top:auto}
+.cob{background:var(--mc);color:#fff;border:0;padding:11px;border-radius:var(--mr);cursor:pointer;font:inherit}
+.msg{position:absolute;left:50%;bottom:16px;transform:translate(-50%,30px);background:var(--mc);color:#fff;padding:9px 16px;border-radius:99px;font-size:.78rem;opacity:0;transition:.3s;z-index:6;white-space:nowrap}
+.msg.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div id="pre"><img src="images/logo.jpg" alt=""><b id="pct">0%</b></div><div id="cr"></div><div id="toast">Email copied ✓</div>
+<div id="bar"></div><div id="glow"></div>
+<header><div class="wrap nav">
+  <a href="#top" class="brand" aria-label="LinkDit home"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#e08a0b"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M11 9v22h10" fill="none" stroke="#1a1204" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 9h4a9 9 0 0 1 0 18h-4" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M33 4l1 2.4 2.4 1-2.4 1L33 11l-1-2.6-2.4-1 2.4-1z" fill="#fff"/></svg><span class="wm"><span>Link<b>Dit</b></span><small>Web Developer</small></span></a>
+  <nav class="links"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+  <div class="navr"><button id="kb" aria-label="Quick menu">⌘ K</button><button id="tg" aria-label="Toggle theme">◐</button><a href="#contact" class="btn" style="padding:9px 18px">Hire Me</a></div>
+</div></header>
+
+<main id="top">
+<div class="hero"><canvas id="net"></canvas><div class="wrap">
+  <div>
+    <span class="tag">● Available for new projects</span>
+    <h1>Hi, I’m Mudassar. I build fast <span id="rot">Shopify stores</span><i class="cur"></i> that sell.</h1>
+    <p>LinkDit is my web design and development brand. I’ve delivered complete Shopify stores and business websites for clients, built to look premium, load fast and turn visitors into customers.</p>
+    <div class="cta"><a href="#work" class="btn">View My Work</a><a href="#contact" class="btn ghost">Let’s Talk</a></div>
+    <div class="stats">
+      <div><b><span data-n="3">3</span>+</b><small>Years experience</small></div>
+      <div><b>Many</b><small>Stores &amp; websites delivered</small></div>
+      <div><b><span data-n="100">100</span>%</b><small>Client focus</small></div>
+    </div>
+  </div>
+  <div class="tilt"><img class="logo" src="images/logo.jpg" alt="LinkDit – Web Designer &amp; Developer Muhammad Mudassar Elahi"></div>
+</div></div>
+
+<div class="mq"><div><span><i>🛍️</i>Shopify Stores</span><span><i>💻</i>Custom Websites</span><span><i>🧩</i>Liquid Themes</span><span><i>⌨️</i>HTML · CSS · JavaScript</span><span><i>📱</i>Responsive Design</span><span><i>⚡</i>Speed Optimization</span><span><i>🔍</i>SEO</span><span><i>🎨</i>UI / UX</span></div></div>
+<section id="about"><div class="wrap ab">
+  <div><div class="pf rv"><img src="images/mudassar.jpg" alt="Muhammad Mudassar Elahi"><div><b>Muhammad Mudassar Elahi</b><small>Web Designer &amp; Developer</small></div></div><h2 class="rv">About Me</h2><p class="sub rv">I’m Muhammad Mudassar Elahi, the web designer and developer behind LinkDit. I’ve built and launched complete Shopify stores and business websites, handling everything from design and development to speed, SEO and launch.</p><p class="sub rv" style="margin-top:-14px">My goal is simple: a site that looks premium, loads fast and brings you customers.</p></div>
+  <div class="grid"><div class="card rv"><div class="ico">🏬</div><h3>Complete stores &amp; websites</h3></div><div class="card rv"><div class="ico">📱</div><h3>Mobile-first design</h3></div><div class="card rv"><div class="ico">⚡</div><h3>Fast &amp; SEO ready</h3></div><div class="card rv"><div class="ico">🤝</div><h3>Support after launch</h3></div></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <h2 class="rv">Services</h2><p class="sub rv">Everything you need to get your business online and growing.</p>
+  <div class="grid">
+    <div class="card rv"><div class="ico">🛍️</div><h3>Shopify Store Development</h3><p>Complete store setup, theme customization, product pages, payments and shipping.</p></div>
+    <div class="card rv"><div class="ico">💻</div><h3>Custom Website Development</h3><p>Responsive business, portfolio and landing pages built with clean, fast code.</p></div>
+    <div class="card rv"><div class="ico">🚀</div><h3>Speed &amp; SEO Optimization</h3><p>Faster load times and better search visibility so customers find you.</p></div>
+    <div class="card rv"><div class="ico">🛠️</div><h3>Maintenance &amp; Support</h3><p>Updates, bug fixes and ongoing help after your site goes live.</p></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2 class="rv">Selected Work</h2><p class="sub rv">Real projects I’ve designed and built. Tap a screenshot to enlarge it.</p>
+  <div class="flt"><button class="on" data-c="all">All</button><button data-c="shopify">Shopify</button><button data-c="web">Websites</button></div>
+  <div class="grid two">
+    <a class="card proj rv" data-cat="shopify" href="https://nnjewellery.store" target="_blank" rel="noopener"><img src="images/nn1.jpg" alt="NN Jewellery home page" loading="lazy"><div class="t"><h3>NN Jewellery – Home Page</h3><p>Premium Shopify store for a Pakistani jewellery brand with a sale banner, collection grid and trending products.</p><span class="pill">Shopify</span><span class="pill">E-commerce</span><span class="pill">Custom Design</span><br><span class="visit">Visit site →</span></div></a>
+    <a class="card proj rv" data-cat="shopify" href="https://nnjewellery.store" target="_blank" rel="noopener"><img src="images/nn2.jpg" alt="NN Jewellery collections page" loading="lazy"><div class="t"><h3>NN Jewellery – Collections</h3><p>Clean product collection pages with filters, sale badges and a fast, mobile-friendly shopping experience.</p><span class="pill">Shopify</span><span class="pill">Collections</span><span class="pill">UX</span><br><span class="visit">Visit site →</span></div></a>
+    <a class="card proj rv" data-cat="web" href="https://typodocs.online" target="_blank" rel="noopener"><img src="images/ty1.jpg" alt="TypoDocs home page" loading="lazy"><div class="t"><h3>TypoDocs – Product Website</h3><p>Landing site for an offline-first Markdown editor for Windows, with feature showcase and dark mode.</p><span class="pill">Website</span><span class="pill">Software Landing Page</span><br><span class="visit">Visit site →</span></div></a>
+    <a class="card proj rv" data-cat="web" href="https://typodocs.online" target="_blank" rel="noopener"><img src="images/ty2.jpg" alt="TypoDocs download page" loading="lazy"><div class="t"><h3>TypoDocs – Download Page</h3><p>Download page with release details, checksum verification and install steps.</p><span class="pill">Website</span><span class="pill">Downloads</span><br><span class="visit">Visit site →</span></div></a>
+  </div>
+</div></section>
+
+<section id="cases"><div class="wrap">
+  <h2 class="rv">Case Studies</h2><p class="sub rv">What I built for these projects.</p>
+  <div class="grid two">
+    <div class="card cs rv"><span class="pill" style="margin:0">Shopify</span><h3>NN Jewellery – Online Jewellery Store</h3><p>A Pakistani jewellery brand needed a premium-looking online store that makes shopping easy.</p>
+      <ul><li>Custom Shopify design with sale banner and announcement bar</li><li>Collection tiles for bangles, mala sets, earrings, rings, pendants and bracelets</li><li>Trending products slider and filterable collection pages</li><li>WhatsApp chat button, newsletter signup and clean mobile layout</li></ul><span class="visit">Tools: Shopify · Liquid · CSS · JavaScript</span></div>
+    <div class="card cs rv"><span class="pill" style="margin:0">Website</span><h3>TypoDocs – Software Product Website</h3><p>An offline-first Markdown editor for Windows needed a clear website to explain it and get downloads.</p>
+      <ul><li>Landing page with feature showcase and app screenshots</li><li>Light and dark theme toggle</li><li>Download page with release info, checksum and install steps</li><li>Pricing, compare and release-notes pages</li></ul><span class="visit">Tools: HTML · CSS · JavaScript · Vite</span></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2 class="rv">Skills &amp; Tools</h2><p class="sub rv">What I work with every day.</p>
+  <div class="sk rv"><span>Shopify</span><span>Liquid</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vite</span><span>Git &amp; GitHub</span><span>Responsive Design</span><span>UI / UX</span><span>SEO</span><span>Speed Optimization</span><span>Payment &amp; Shipping Setup</span></div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <h2 class="rv">Pricing</h2><p class="sub rv">Simple, affordable starting prices in PKR.</p>
+  <div class="grid">
+    <div class="card pr rv"><h3>Starter</h3><div class="price">Rs. 6,999<small> / starting</small></div><p>For a simple one-page presence.</p>
+      <ul><li>1-page landing website</li><li>Mobile responsive design</li><li>WhatsApp and contact buttons</li><li>Basic SEO setup</li><li>2 rounds of changes</li></ul><a class="btn" data-pk="Starter" href="#">Choose Starter</a></div>
+    <div class="card pr pop rv"><h3>Business Website</h3><div class="price">Rs. 24,999<small> / starting</small></div><p>For businesses that need a full website.</p>
+      <ul><li>Up to 5 pages</li><li>Custom design matching your brand</li><li>Contact form and Google Maps</li><li>Speed optimization and SEO basics</li><li>1 month support</li></ul><a class="btn" data-pk="Business Website" href="#">Choose Business</a></div>
+    <div class="card pr rv"><h3>Shopify Store</h3><div class="price">Rs. 9,999<small> / starting</small></div><p>A complete online store, ready to sell.</p>
+      <ul><li>Full Shopify store setup</li><li>Free .online / .store domain</li><li>Theme customization</li><li>Product upload (up to 20)</li><li>Payment and shipping setup</li><li>Speed and SEO setup</li><li>1 month support</li></ul><a class="btn" data-pk="Shopify Store" href="#">Choose Shopify</a></div>
+  </div>
+  <p class="note rv">Prices are starting prices. The final quote depends on your requirements. Ongoing maintenance is available separately.</p>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <h2 class="rv">How I Work</h2><p class="sub rv">A simple process with clear communication at every step.</p>
+  <div class="grid">
+    <div class="card step rv"><b>01</b><h3>Discuss</h3><p>We talk about your goals, audience and budget.</p></div>
+    <div class="card step rv"><b>02</b><h3>Design</h3><p>I create a layout that matches your brand.</p></div>
+    <div class="card step rv"><b>03</b><h3>Build</h3><p>Development, testing and revisions until you’re happy.</p></div>
+    <div class="card step rv"><b>04</b><h3>Launch</h3><p>Go live, plus support after delivery.</p></div>
+  </div>
+</div></section>
+
+<section id="studio"><div class="wrap">
+  <h2 class="rv">Design Your Store Live</h2><p class="sub rv">Pick a product type, colors, style and extras, then add items to the cart and even check out. When you love it, send the design to me in one tap.</p>
+  <div class="st">
+    <div class="stc card rv">
+      <h3>Store name</h3><input id="sn" value="LinkDit" maxlength="22" aria-label="Store name">
+      <h3>Products</h3><div class="sch" id="ty"><button class="on" data-t="j" data-tl="Jewellery">💍 Jewellery</button><button data-t="f" data-tl="Fashion">👗 Fashion</button><button data-t="t" data-tl="Tech">🎧 Tech</button><button data-t="b" data-tl="Beauty">💄 Beauty</button></div>
+      <h3>Brand color</h3><div class="sw" id="sw"><button data-c="#f0a52a" data-cn="Gold" style="background:#f0a52a" class="on" aria-label="Gold"></button><button data-c="#10b981" data-cn="Emerald" style="background:#10b981" aria-label="Emerald"></button><button data-c="#f43f8e" data-cn="Rose" style="background:#f43f8e" aria-label="Rose"></button><button data-c="#3b82f6" data-cn="Royal Blue" style="background:#3b82f6" aria-label="Blue"></button><button data-c="#a855f7" data-cn="Purple" style="background:#a855f7" aria-label="Purple"></button><button data-c="#94a3b8" data-cn="Silver" style="background:#94a3b8" aria-label="Silver"></button><input type="color" id="cc" value="#f0a52a" aria-label="Custom color" title="Pick any color"></div>
+      <h3>Style</h3><div class="sch" id="stl"><button class="on" data-s="lux">Luxury</button><button data-s="mod">Modern</button><button data-s="bold">Bold</button></div>
+      <h3>Hero layout</h3><div class="sch" id="ly"><button class="on" data-l="ban" data-ll="Banner">Banner</button><button data-l="spl" data-ll="Split">Split</button><button data-l="min" data-ll="Minimal">Minimal</button></div>
+      <h3>Mode</h3><div class="sch" id="md"><button class="on" data-m="light">Light</button><button data-m="dark">Dark</button></div>
+      <h3>Preview on</h3><div class="sch" id="dv"><button class="on" data-d="desk">🖥️ Desktop</button><button data-d="mob">📱 Mobile</button></div>
+      <h3>Extras</h3><div class="sch" id="ex"><button data-x="bar">Announcement bar</button><button data-x="sale">Sale badges</button><button data-x="rev">Star reviews</button></div>
+      <button class="btn" id="stsend" type="button">Send this design to me</button>
+      <button class="btn ghost" id="stsur" type="button">🎲 Surprise me</button>
+    </div>
+    <div class="mock rv" id="mk" data-s="lux" data-m="light" data-l="ban">
+      <div class="mb"><i></i><i></i><i></i><span id="mu">linkdit.com</span></div>
+      <div class="ann">✦ SEASON SALE · UP TO 25% OFF · FREE DELIVERY ✦</div>
+      <div class="ms"><nav><b id="mn">LinkDit</b><span>Shop</span><span>About</span><span class="ct">Cart (0)</span></nav>
+        <div class="mh"><div><small>NEW COLLECTION</small><h4></h4><a>Shop now</a></div><span class="he"></span></div>
+        <div class="mg"></div>
+      </div>
+      <div class="dr"><div class="pn"><div style="display:flex;justify-content:space-between;align-items:center"><b>Your Cart</b><button class="cx" aria-label="Close cart">✕</button></div><div class="cl"></div><div class="tot"><span>Total</span><b>Rs. 0</b></div><button class="cob" type="button">Checkout</button></div></div>
+      <div class="msg">Order placed 🎉 Thank you!</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <h2 class="rv">Plan Your Project</h2><p class="sub rv">Pick what you need and send your brief to me in one tap.</p>
+  <div class="pl">
+    <div class="card rv">
+      <h3>1. What do you need?</h3><div class="chips" data-g="type"><button>Shopify store</button><button>Business website</button><button>Landing page</button><button>Redesign</button></div>
+      <h3>2. Extras</h3><div class="chips" data-g="ex" data-multi><button>Speed optimization</button><button>SEO setup</button><button>Product upload</button><button>Payment &amp; shipping setup</button><button>Maintenance</button></div>
+      <h3>3. Timeline</h3><div class="chips" data-g="tl" style="margin:0"><button>ASAP</button><button>1–2 weeks</button><button>Flexible</button></div>
+    </div>
+    <div class="card sum rv"><h3>Your brief</h3><pre id="brief"></pre><a id="sendb" class="btn" href="#" target="_blank" rel="noopener">Send on WhatsApp</a></div>
+  </div>
+</div></section>
+
+<section id="rev" hidden><div class="wrap">
+  <h2 class="rv">Client Reviews</h2><p class="sub rv">What clients say about working with me.</p>
+  <div class="grid" id="revg"></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2 class="rv">FAQ</h2><p class="sub rv">Quick answers to common questions.</p>
+  <div class="faq">
+    <details class="rv"><summary>Do you build complete Shopify stores?</summary><p>Yes. Store setup, theme customization, product pages, payments, shipping and launch.</p></details>
+    <details class="rv"><summary>Can you build a custom website for my business?</summary><p>Yes. Responsive business websites, landing pages and portfolios built with clean, fast code.</p></details>
+    <details class="rv"><summary>How long does a project take?</summary><p>It depends on the size of the project. After we discuss your needs I’ll give you a clear timeline.</p></details>
+    <details class="rv"><summary>Do you offer support after launch?</summary><p>Yes. I help with updates, fixes and improvements after your site goes live.</p></details>
+  </div>
+</div></section>
+
+<section id="audit"><div class="wrap"><div class="contact rv">
+  <h2>Free Website Audit</h2>
+  <p class="sub">Already have a website or store? Send me the link and I’ll tell you what to fix for speed, SEO and mobile.</p>
+  <form class="au" id="au"><input name="u" placeholder="yourwebsite.com" required><button class="btn" type="submit">Get My Audit</button></form>
+</div></div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact rv">
+    <h2>Let’s build your website</h2>
+    <p class="sub">Tell me about your project and I’ll reply as soon as possible.</p>
+    <form class="fm" id="fm"><input name="n" placeholder="Your name" required><input name="e" type="email" placeholder="Your email (optional)"><textarea name="m" rows="4" placeholder="Tell me about your project" required></textarea><button class="btn" type="submit">Send on WhatsApp</button></form>
+    <p class="sub" style="margin-top:26px">Or reach me directly:</p>
+    <div class="cta" style="margin-top:12px">
+      <a class="btn" href="mailto:elahimudassasr1@gmail.com">elahimudassasr1@gmail.com</a>
+      <button class="btn ghost" id="cpy" type="button">Copy email</button>
+      <a class="btn ghost" href="tel:+923197013743">+92 319 7013743</a>
+      <a class="btn ghost" href="https://wa.me/923197013743" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</div></section>
+</main>
+<a class="wa" href="https://wa.me/923197013743" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+<div id="cp"><div class="box"><input id="cpi" placeholder="Jump to… (Esc to close)"><div id="cpl"></div></div></div>
+<div id="lb"><img alt="Preview"></div>
+
+<footer><div class="wrap">© <span id="y">2026</span> LinkDit – Muhammad Mudassar Elahi. All rights reserved.</div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var bar=document.getElementById('bar');
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+var g=document.getElementById('glow');
+if(matchMedia('(pointer:fine)').matches)addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+var W=['Shopify stores','business websites','online brands','fast landing pages'],wi=0,ci=W[0].length,dl=true,rot=document.getElementById('rot');
+function tw(){if(dl)ci--;else ci++;rot.textContent=W[wi].slice(0,ci);var d=dl?45:85;if(dl&&ci===0){dl=false;wi=(wi+1)%W.length;d=250}else if(!dl&&ci===W[wi].length){dl=true;d=1700}setTimeout(tw,d)}
+setTimeout(tw,2000);
+document.querySelectorAll('[data-n]').forEach(function(el){var n=+el.dataset.n,s=0,t=setInterval(function(){s+=Math.ceil(n/40);if(s>=n){s=n;clearInterval(t)}el.textContent=s},35)});
+var m=document.querySelector('.mq div');m.innerHTML+=m.innerHTML;
+document.getElementById('tg').onclick=function(){var r=document.documentElement,d=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');r.setAttribute('data-theme',d==='dark'?'light':'dark')};
+document.querySelectorAll('.flt button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.flt button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');var c=b.dataset.c;document.querySelectorAll('.proj').forEach(function(p){p.classList.toggle('hide',c!=='all'&&p.dataset.cat!==c)})}});
+var lb=document.getElementById('lb');
+document.querySelectorAll('.proj img').forEach(function(i){i.onclick=function(e){e.preventDefault();lb.querySelector('img').src=i.src;lb.classList.add('on')}});
+lb.onclick=function(){lb.classList.remove('on')};
+var KEY='';/* Web3Forms access key: paste it here to receive form messages in your Gmail */
+(function(){var f=document.getElementById('fm'),b=f.querySelector('button');if(KEY)b.textContent='Send Message';
+f.onsubmit=function(e){e.preventDefault();var x='Hi LinkDit, I am '+f.n.value+'. '+f.m.value;
+if(!KEY){window.open('https://wa.me/923197013743?text='+encodeURIComponent(x),'_blank','noopener,noreferrer');return}
+b.textContent='Sending…';fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({access_key:KEY,name:f.n.value,email:f.e.value,message:f.m.value,subject:'New portfolio inquiry'})}).then(function(r){return r.json()}).then(function(d){b.textContent=d.success?'Sent ✓ Thank you!':'Error – try WhatsApp';if(d.success)f.reset()}).catch(function(){b.textContent='Error – try WhatsApp'})}})();
+document.querySelectorAll('[data-pk]').forEach(function(a){a.target='_blank';a.rel='noopener';a.href='https://wa.me/923197013743?text='+encodeURIComponent('Hi LinkDit, I am interested in the '+a.dataset.pk+' package.')});
+document.getElementById('au').onsubmit=function(e){e.preventDefault();window.open('https://wa.me/923197013743?text='+encodeURIComponent('Hi LinkDit, please audit my website: '+e.target.u.value),'_blank','noopener,noreferrer')};
+var T=[];/* Add real reviews: {q:'Review text',n:'Client name',r:'Business'} */
+if(T.length){document.getElementById('rev').hidden=false;T.forEach(function(v){var d=document.createElement('div');d.className='card qt rv in';d.innerHTML='<p></p><b></b><br><small></small>';d.children[0].textContent='“'+v.q+'”';d.children[1].textContent=v.n;d.children[3].textContent=v.r||'';document.getElementById('revg').appendChild(d)})}
+
+var pc=document.getElementById('pct'),pn=0,pt=setInterval(function(){pn+=Math.ceil(Math.random()*9);if(pn>=100){pn=100;clearInterval(pt);setTimeout(function(){document.getElementById('pre').classList.add('out')},250)}pc.textContent=pn+'%'},60);
+setTimeout(function(){document.getElementById('pre').classList.add('out')},3000);
+(function(){var c=document.getElementById('net'),x=c.getContext('2d'),P=[],mx=-999,my=-999,w,h,vis=true;
+function rs(){var r=c.getBoundingClientRect();w=c.width=r.width;h=c.height=r.height;P=[];for(var i=0,n=Math.min(70,Math.floor(w*h/14000));i<n;i++)P.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4})}
+rs();addEventListener('resize',rs);
+var hr=c.parentNode;hr.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+hr.addEventListener('mouseleave',function(){mx=my=-999});
+new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(c);
+function f(){if(vis){x.clearRect(0,0,w,h);for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;x.fillStyle='rgba(240,165,42,.7)';x.beginPath();x.arc(p.x,p.y,1.8,0,6.3);x.fill();
+for(var j=i+1;j<P.length;j++){var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<120){x.strokeStyle='rgba(240,165,42,'+.25*(1-d/120)+')';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+var dm=Math.hypot(p.x-mx,p.y-my);if(dm<170){x.strokeStyle='rgba(255,210,122,'+.6*(1-dm/170)+')';x.beginPath();x.moveTo(p.x,p.y);x.lineTo(mx,my);x.stroke()}}}requestAnimationFrame(f)}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)f();})();
+if(matchMedia('(pointer:fine)').matches){document.body.classList.add('fine');var cr=document.getElementById('cr');
+addEventListener('mousemove',function(e){cr.style.left=e.clientX+'px';cr.style.top=e.clientY+'px';cr.classList.toggle('big',!!e.target.closest('a,button,summary,input,textarea,.proj img'))})}
+document.querySelectorAll('.hero .btn,.contact .btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.2+'px,'+(e.clientY-r.top-r.height/2)*.3+'px)'});b.addEventListener('mouseleave',function(){b.style.transform=''})});
+function tilt(el,base,k){el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;el.style.transform='perspective(800px) rotateX('+(-py*k)+'deg) rotateY('+(px*k)+'deg)'+base});el.addEventListener('mouseleave',function(){el.style.transform=''})}
+tilt(document.querySelector('.tilt'),'',14);document.querySelectorAll('.proj').forEach(function(p){tilt(p,' translateY(-6px)',6)});
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')})});
+var sp=[].slice.call(document.querySelectorAll('.links a')),se=sp.map(function(a){return document.querySelector(a.getAttribute('href'))});
+addEventListener('scroll',function(){var y=scrollY+130,k=-1;se.forEach(function(s,i){if(s&&s.offsetTop<=y)k=i});sp.forEach(function(a,i){a.classList.toggle('act',i===k)})},{passive:true});
+var cp=document.getElementById('cp'),pi=document.getElementById('cpi'),cl=document.getElementById('cpl');
+var IT=[['About','#about'],['Services','#services'],['Selected Work','#work'],['Live Store Designer','#studio'],['Case Studies','#cases'],['Skills','#skills'],['Pricing','#pricing'],['Free Website Audit','#audit'],['Plan Your Project','#plan'],['FAQ','#faq'],['Contact','#contact'],['Email me','mailto:elahimudassasr1@gmail.com'],['WhatsApp','https://wa.me/923197013743'],['Toggle theme','t']];
+function go(h){cp.classList.remove('on');if(h==='t')document.getElementById('tg').click();else if(h.charAt(0)==='#')document.querySelector(h).scrollIntoView({behavior:'smooth'});else window.open(h,'_blank','noopener,noreferrer')}
+function rn(){var q=pi.value.toLowerCase();cl.innerHTML='';IT.filter(function(i){return i[0].toLowerCase().indexOf(q)>-1}).forEach(function(i){var b=document.createElement('button');b.textContent=i[0];b.onclick=function(){go(i[1])};cl.appendChild(b)})}
+function op(){cp.classList.add('on');pi.value='';rn();pi.focus()}
+document.getElementById('kb').onclick=op;pi.oninput=rn;
+pi.onkeydown=function(e){if(e.key==='Enter'&&cl.firstChild)cl.firstChild.click()};
+cp.onclick=function(e){if(e.target===cp)cp.classList.remove('on')};
+addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();op()}if(e.key==='Escape'){cp.classList.remove('on');lb.classList.remove('on')}});
+var bf=document.getElementById('brief'),sb=document.getElementById('sendb');
+function pl(){var g=function(n){return [].map.call(document.querySelectorAll('[data-g="'+n+'"] .on'),function(b){return b.textContent})};var s='Project: '+(g('type')[0]||'Not selected')+'\nExtras: '+(g('ex').join(', ')||'None')+'\nTimeline: '+(g('tl')[0]||'Not selected');bf.textContent=s;sb.href='https://wa.me/923197013743?text='+encodeURIComponent('Hi LinkDit, here is my project brief:\n'+s)}
+document.querySelectorAll('.chips').forEach(function(c){c.querySelectorAll('button').forEach(function(b){b.onclick=function(){if(!c.hasAttribute('data-multi'))c.querySelectorAll('button').forEach(function(z){if(z!==b)z.classList.remove('on')});b.classList.toggle('on');pl()}})});pl();
+var ts=document.getElementById('toast');
+document.getElementById('cpy').onclick=function(){try{navigator.clipboard.writeText('elahimudassasr1@gmail.com')}catch(e){}ts.classList.add('on');setTimeout(function(){ts.classList.remove('on')},1800)};
+(function(){
+var D={j:{h:'Made to be treasured',e:'💎',p:[['💍','Classic Ring',2500],['📿','Pearl Necklace',3200],['💎','Diamond Studs',4100]]},
+f:{h:'Wear your story',e:'👗',p:[['👗','Silk Dress',4500],['👜','Day Bag',3200],['👟','Sneakers',5900]]},
+t:{h:'Tech that moves you',e:'🎧',p:[['🎧','Headphones',6500],['⌚','Smart Watch',8900],['📱','Phone Case',1200]]},
+b:{h:'Glow your way',e:'💄',p:[['💄','Lipstick',1800],['🧴','Face Serum',2900],['🌸','Perfume',5400]]}};
+var XN={bar:'Announcement bar',sale:'Sale badges',rev:'Star reviews'};
+var mk=document.getElementById('mk'),sn=document.getElementById('sn'),cc=document.getElementById('cc'),mg=mk.querySelector('.mg'),S={c:'#f0a52a',cn:'Gold',s:'lux',sl:'Luxury',m:'light',t:'j',tl:'Jewellery',l:'ban',ll:'Banner',d:'desk',x:{}},cart=[];
+function money(n){return 'Rs. '+n.toLocaleString('en-US')}
+function drawer(){var n=0,tot=0,h='';cart.forEach(function(c,i){n+=c.q;tot+=c.q*c.p;h+='<div class="ci"><span>'+c.e+'</span><span>'+c.n+'</span><button data-q="-1" data-k="'+i+'">−</button><span>'+c.q+'</span><button data-q="1" data-k="'+i+'">+</button></div>'});
+mk.querySelector('.ct').textContent='Cart ('+n+')';mk.querySelector('.cl').innerHTML=h||'<p style="opacity:.6;font-size:.8rem">Your cart is empty.</p>';mk.querySelector('.tot b').textContent=money(tot)}
+function render(){var d=D[S.t],n=sn.value.trim()||'Your Store';
+mk.style.setProperty('--mc',S.c);mk.dataset.s=S.s;mk.dataset.m=S.m;mk.dataset.l=S.l;mk.classList.toggle('ph',S.d==='mob');
+['bar','sale','rev'].forEach(function(k){mk.classList.toggle('x-'+k,!!S.x[k])});
+document.getElementById('mn').textContent=n;document.getElementById('mu').textContent=(n.toLowerCase().replace(/[^a-z0-9]+/g,'')||'yourstore')+'.com';
+mk.querySelector('.mh h4').textContent=d.h;mk.querySelector('.he').textContent=d.e;
+mg.innerHTML=d.p.map(function(p,i){return '<div class="pc"><span class="sb">SALE</span><div class="im">'+p[0]+'</div><p>'+p[1]+'</p><span class="stars">★★★★★</span><b>'+(S.x.sale?'<s>'+money(Math.round(p[2]*1.25/100)*100)+'</s> ':'')+money(p[2])+'</b><a data-i="'+i+'">Add to cart</a></div>'}).join('')}
+function one(id,fn){var bs=document.querySelectorAll('#'+id+' button');bs.forEach(function(b){b.onclick=function(){bs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');fn(b);render()}})}
+one('sw',function(b){S.c=b.dataset.c;S.cn=b.dataset.cn;cc.value=b.dataset.c});
+one('ty',function(b){S.t=b.dataset.t;S.tl=b.dataset.tl;cart=[];drawer()});
+one('stl',function(b){S.s=b.dataset.s;S.sl=b.textContent});
+one('ly',function(b){S.l=b.dataset.l;S.ll=b.dataset.ll});
+one('md',function(b){S.m=b.dataset.m});
+one('dv',function(b){S.d=b.dataset.d});
+document.querySelectorAll('#ex button').forEach(function(b){b.onclick=function(){b.classList.toggle('on');S.x[b.dataset.x]=b.classList.contains('on');render()}});
+cc.oninput=function(){S.c=cc.value;S.cn=cc.value.toUpperCase();document.querySelectorAll('#sw button').forEach(function(x){x.classList.remove('on')});render()};
+sn.oninput=render;
+function boom(el){var r=el.getBoundingClientRect(),cl=['#f0a52a','#ffd27a','#ffffff',S.c];for(var i=0;i<28;i++){var p=document.createElement('i');p.className='cf';p.style.left=(r.left+r.width/2)+'px';p.style.top=(r.top+r.height/2)+'px';p.style.background=cl[i%4];p.style.setProperty('--x',(Math.random()*380-190)+'px');p.style.setProperty('--y',(Math.random()*-280-30)+'px');document.body.appendChild(p)}setTimeout(function(){document.querySelectorAll('.cf').forEach(function(x){x.remove()})},1100)}
+mk.addEventListener('click',function(e){var t=e.target,a=t.closest('.pc a'),q=t.closest('[data-q]');
+if(a){var p=D[S.t].p[+a.dataset.i],f=cart.filter(function(c){return c.n===p[1]})[0];if(f)f.q++;else cart.push({e:p[0],n:p[1],p:p[2],q:1});drawer();a.textContent='Added ✓';setTimeout(function(){a.textContent='Add to cart'},1000);return}
+if(q){var c=cart[+q.dataset.k];c.q+=+q.dataset.q;if(c.q<1)cart.splice(+q.dataset.k,1);drawer();return}
+if(t.closest('.ct'))mk.classList.add('co');
+if(t.classList.contains('dr')||t.closest('.cx'))mk.classList.remove('co');
+var cb=t.closest('.cob');if(cb&&cart.length){var m=mk.querySelector('.msg');boom(cb);cart=[];drawer();mk.classList.remove('co');m.classList.add('on');setTimeout(function(){m.classList.remove('on')},2400)}});
+function rd(id){var bs=document.querySelectorAll('#'+id+' button');bs[Math.floor(Math.random()*bs.length)].click()}
+document.getElementById('stsur').onclick=function(){['sw','ty','stl','ly','md'].forEach(rd);boom(this)};
+document.getElementById('stsend').onclick=function(){boom(this);var x=Object.keys(S.x).filter(function(k){return S.x[k]}).map(function(k){return XN[k]});window.open('https://wa.me/923197013743?text='+encodeURIComponent('Hi LinkDit, I like this store design:\nStore name: '+(sn.value.trim()||'Your Store')+'\nProducts: '+S.tl+'\nColor: '+S.cn+'\nStyle: '+S.sl+'\nHero layout: '+S.ll+'\nMode: '+(S.m==='dark'?'Dark':'Light')+'\nExtras: '+(x.join(', ')||'None')),'_blank','noopener,noreferrer')};
+render();drawer();
+})();
+</script>
+</body>
+</html>
