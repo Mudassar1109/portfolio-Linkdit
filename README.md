@@ -1,37 +1,28 @@
-# LinkDit Portfolio
+# M~M Web Development Portfolio
 
-Portfolio website of **Muhammad Mudassar Elahi** (LinkDit – Web Designer & Developer).
+Portfolio website of **Muhammad Mudassar Elahi** — M~M Web Development.
 
-## Files
-- `index.html` – the whole website (HTML, CSS, JS in one file)
-- `images/` – logo and project screenshots
+## Pages
+- `index.html` — Home
+- `about.html` — About
+- `services.html` — Services
+- `projects.html` — Selected projects and case studies
+- `blog.html` — Blog / insights landing page
+- `contact.html` — Contact form (opens WhatsApp)
+
+## Assets
+- `assets/css/style.css` — Shared responsive styles and glassmorphism design
+- `assets/js/main.js` — Page transitions, reveal animations, mobile navigation and WhatsApp form handling
+- `images/` — Existing logo, profile image and project screenshots (preserved)
 
 ## Run locally
-Just open `index.html` in a browser.
+Open `index.html` in a browser. No build step or package installation is required.
 
-## Host free on GitHub Pages
-1. Push these files to a GitHub repository.
-2. Repository → Settings → Pages.
-3. Source: "Deploy from a branch", Branch: `main`, folder: `/ (root)` → Save.
-4. Your site goes live at `https://<username>.github.io/<repo-name>/`.
+## GitHub Pages
+In repository Settings → Pages, choose **Deploy from a branch**, select `main` and `/(root)`.
 
-## Other free ways to go live
-- **Netlify Drop:** open app.netlify.com/drop and drag the whole extracted folder in. Live in seconds.
-- **Cloudflare Pages / Vercel:** connect the GitHub repository and deploy (no build command needed).
-- **Custom domain:** buy a domain, then add it in the Pages / Netlify settings (they show the DNS records to set).
+## Contact configuration
+- Email: `elahimudassasr1@gmail.com`
+- WhatsApp: `+92 319 7013743`
 
-## Edit
-- Contact details: search for `923197013743` and `elahimudassasr1@gmail.com` in `index.html`.
-- Projects: copy a `<a class="card proj ...">` block in the "Selected Work" section and replace the image, title and link.
-
-## Features
-Animated network background, typewriter headline, preloader, custom cursor, 3D tilt, command palette (Ctrl/Cmd + K), project planner (sends brief to WhatsApp), project filter + lightbox, FAQ, dark/light theme.
-
-## Setup checklist
-- **Form to Gmail:** get a free access key at web3forms.com, then paste it in `var KEY=''` in `index.html`.
-- **Client reviews:** add real reviews in `var T=[]` (the section stays hidden until you add one).
-- **Pricing:** edit the three cards in the `#pricing` section.
-- **Photo:** replace `images/mudassar.jpg` with your own photo.
-- **Link preview (WhatsApp/Facebook):** in the `og:image` meta tag, use the full URL of your logo, e.g. `https://yourdomain.com/images/logo.jpg`.
-- **Analytics:** paste the Google Analytics or Plausible script just before `</head>`.
-- **Google:** add your site in Google Search Console after you connect your domain.
+The contact form opens a pre-filled WhatsApp message; no third-party form service is required.
