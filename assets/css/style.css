@@ -559,3 +559,13 @@
 .reward-package-select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,217,255,.1)}
 .reward-package-select[hidden]{display:none!important}
 .spin-result a[disabled]{opacity:.6;pointer-events:none}
+
+/* Footer clearance: keep fixed WhatsApp button away from footer links. */
+@media (min-width: 761px) {
+  .footer-inner { padding-right: 100px; }
+}
+@media (max-width: 760px) {
+  .footer { padding-bottom: 96px; }
+  .footer-inner { padding-right: 0; }
+  .footer-links { flex-wrap: wrap; row-gap: 12px; }
+}
