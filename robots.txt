@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mudassar1109.github.io/portfolio-Linkdit/sitemap.xml
