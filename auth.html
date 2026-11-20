@@ -5,19 +5,90 @@
 <title>Google Sign In | M~M Rewards</title>
 <link rel="icon" href="assets/mm-logo.svg">
 <style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;background:#303030;color:#fff}body{min-height:100vh;display:grid;place-items:center;padding:28px}.auth-shell{width:min(1080px,100%);min-height:650px;background:#030303;border-radius:12px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;box-shadow:0 25px 90px #0008}.auth-shell:before{content:"";position:absolute;left:-6%;right:-5%;top:42%;height:250px;background:linear-gradient(110deg,transparent 5%,#061c29 18%,#1b6571 27%,#05090e 34%,#6b252a 42%,#0a1118 48%,#0c3647 57%,#020305 66%,#773c31 75%,#071923 85%,transparent 95%);filter:blur(12px);opacity:.9;transform:skewY(-7deg);clip-path:polygon(0 22%,18% 8%,34% 44%,50% 0,68% 35%,84% 12%,100% 40%,100% 80%,80% 62%,64% 100%,47% 60%,29% 90%,12% 58%,0 78%)}.auth-left,.auth-right{position:relative;z-index:1;padding:48px}.auth-left{display:flex;flex-direction:column;justify-content:space-between}.logo{width:48px;height:48px;border:1px solid #00d9ff;border-radius:50%;display:grid;place-items:center;background:#071727}.logo img{width:38px;height:38px}.welcome{margin-top:45px}.welcome h1{font-size:clamp(2.7rem,5vw,4.2rem);letter-spacing:.02em;margin:0 0 24px;font-weight:900;color:#f7fbff;text-shadow:0 2px 0 #8fa4b4,0 4px 0 #52697b,0 7px 16px #00cfff44}.welcome p{max-width:340px;color:#7d8b9c;line-height:1.7}.social{display:flex;gap:20px;color:#8b929c;font-size:1.1rem}.auth-right{display:flex;align-items:center;justify-content:center}.glass-card{width:100%;max-width:420px;min-height:420px;padding:44px 34px;border:1px solid #ffffff12;border-radius:22px;background:linear-gradient(145deg,#16191dcc,#090a0be8);backdrop-filter:blur(20px);box-shadow:0 20px 60px #0008}.glass-card h2{text-align:center;font-size:2rem;margin:0 0 12px;text-shadow:0 2px 0 #6c7d8e,0 5px 14px #00d9ff35}.sub{text-align:center;color:#8994a2;line-height:1.6;font-size:.9rem;margin-bottom:34px}.google-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:13px;padding:15px 18px;border:1px solid #d6e1ed;border-radius:12px;background:#f4f7fb;color:#18202a;font-size:1rem;font-weight:800;cursor:pointer;transition:.2s}.google-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px #00bfe533}.google-g{font-size:1.35rem;font-weight:900;color:#4285f4}.fine{margin:24px 0 0;text-align:center;color:#6f7d8b;font-size:.75rem;line-height:1.6}.status{min-height:44px;margin-top:18px;text-align:center;color:#7ceaff;font-size:.84rem;line-height:1.5}.profile{display:none;text-align:center}.avatar{width:76px;height:76px;border-radius:50%;margin:0 auto 15px;border:2px solid #00d9ff}.profile strong{display:block;font-size:1.05rem}.profile small{display:block;color:#8e9aaa;margin-top:6px;overflow-wrap:anywhere}.profile-actions{display:flex;gap:10px;margin-top:24px}.profile-actions a,.profile-actions button{flex:1;padding:12px;border-radius:10px;border:1px solid #00cfff;background:#00cfff;color:#001321;font-weight:800;text-decoration:none;cursor:pointer}.profile-actions button{background:transparent;color:#c7d5e3}.back{display:block;text-align:center;margin-top:18px;color:#8ca6b8;text-decoration:none;font-size:.85rem}.back:hover{color:#00d9ff}
-@media(max-width:760px){body{padding:14px}.auth-shell{grid-template-columns:1fr;min-height:unset}.auth-left{padding:24px 25px 0;min-height:210px}.welcome{margin:24px 0 25px}.welcome h1{font-size:2.5rem}.welcome p{font-size:.85rem;margin:0}.social{display:none}.auth-right{padding:20px 18px 30px}.glass-card{padding:34px 23px;min-height:unset}.auth-shell:before{top:28%;height:210px}}
+:root{color-scheme:dark;--bg:#050d18;--panel:#091a2a;--panel2:#0d2235;--cyan:#00d9ff;--blue:#087cff;--text:#f4f8ff;--muted:#9aafc3;--line:#16445c}
+*{box-sizing:border-box}
+html{min-height:100%;background:var(--bg)}
+body{margin:0;min-height:100vh;padding:clamp(18px,4vw,52px);display:grid;place-items:center;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at 15% 10%,#07304a 0,transparent 38%),radial-gradient(ellipse at 90% 85%,#06264b 0,transparent 36%),var(--bg)}
+.auth-shell{width:min(100%,980px);min-height:590px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);overflow:hidden;border:1px solid #1b4d68;border-radius:28px;background:linear-gradient(135deg,#071827 0%,#061321 52%,#081b2d 100%);box-shadow:0 28px 90px #0008;position:relative;isolation:isolate}
+.auth-shell:before{content:"";position:absolute;z-index:-1;width:560px;height:560px;left:-230px;bottom:-340px;border-radius:50%;border:1px solid #00d9ff25;box-shadow:0 0 0 38px #00d9ff08,0 0 0 82px #00d9ff05}
+.auth-left,.auth-right{min-width:0;padding:clamp(28px,5vw,58px)}
+.auth-left{display:flex;flex-direction:column;justify-content:space-between;gap:48px;position:relative}
+.logo{width:58px;height:58px;display:grid;place-items:center;border:1px solid var(--cyan);border-radius:50%;background:#071b2b;box-shadow:0 0 24px #00d9ff18}
+.logo img{width:48px;height:48px;object-fit:contain}
+.welcome{max-width:450px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid #12617b;border-radius:999px;color:#8feeff;background:#062337;font-size:.75rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.welcome h1{margin:22px 0 16px;font-size:clamp(2.5rem,5vw,4.35rem);line-height:.98;letter-spacing:-.055em;font-weight:950;color:#f5faff;text-shadow:0 2px 0 #7893a8,0 5px 0 #334d62,0 12px 24px #00cfff26}
+.welcome h1 span{color:var(--cyan)}
+.welcome p{max-width:390px;margin:0;color:var(--muted);font-size:clamp(.98rem,1.5vw,1.08rem);line-height:1.8}
+.benefits{display:grid;gap:13px;margin-top:32px}
+.benefit{display:flex;align-items:center;gap:12px;color:#c3d4e3;font-size:.88rem}
+.benefit i{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;border:1px solid #14516a;background:#08253a;color:var(--cyan);font-style:normal}
+.auth-right{display:grid;place-items:center;background:linear-gradient(145deg,#0b2032cc,#061321ee);border-left:1px solid #17445b}
+.glass-card{width:100%;max-width:390px;padding:clamp(26px,4vw,38px);border:1px solid #20516a;border-radius:24px;background:linear-gradient(150deg,#102a3e,#081827 72%);box-shadow:0 20px 55px #0006;text-align:center}
+.card-mark{width:82px;height:82px;margin:0 auto 22px;display:grid;place-items:center;border-radius:50%;border:2px solid var(--cyan);background:#071a2b;box-shadow:0 0 0 5px #00d9ff12,0 0 28px #00d9ff20}
+.card-mark img{width:68px;height:68px;object-fit:contain}
+.glass-card h2{margin:0 0 9px;font-size:1.8rem;letter-spacing:-.035em;text-shadow:0 2px 0 #526b7e,0 6px 16px #00d9ff20}
+.sub{margin:0 auto 28px;max-width:290px;color:var(--muted);font-size:.9rem;line-height:1.65}
+.google-btn{width:100%;min-height:54px;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 18px;border:1px solid #b9d6e6;border-radius:13px;background:#f7fbff;color:#102031;font-size:1rem;font-weight:800;cursor:pointer;transition:transform .2s,box-shadow .2s,opacity .2s}
+.google-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px #00bfe533}
+.google-btn:disabled{opacity:.65;cursor:wait;transform:none}
+.google-g{font-size:1.35rem;font-weight:950;color:#4285f4}
+.fine{margin:19px 0 0;color:#8299ad;font-size:.76rem;line-height:1.65}
+.status{min-height:38px;margin-top:15px;color:#7ceaff;font-size:.83rem;line-height:1.5;overflow-wrap:anywhere}
+.profile{display:none;text-align:center}
+.avatar{width:82px;height:82px;object-fit:cover;border-radius:50%;margin:0 auto 18px;border:2px solid var(--cyan);box-shadow:0 0 0 5px #00d9ff12}
+.profile strong{display:block;font-size:1.15rem;overflow-wrap:anywhere}
+.profile small{display:block;color:var(--muted);margin-top:8px;overflow-wrap:anywhere;line-height:1.5}
+.profile-actions{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:25px}
+.profile-actions a,.profile-actions button{min-height:52px;display:flex;align-items:center;justify-content:center;padding:12px;border-radius:12px;border:1px solid var(--cyan);background:linear-gradient(100deg,var(--cyan),var(--blue));color:#001321;font-weight:850;text-decoration:none;cursor:pointer;line-height:1.35}
+.profile-actions button{background:transparent;color:#d2e2ef}
+.back{display:inline-block;margin-top:28px;color:#8eaabd;text-decoration:none;font-size:.85rem}
+.back:hover{color:var(--cyan)}
+@media(max-width:760px){
+ body{padding:16px;display:block}
+ .auth-shell{width:min(100%,540px);min-height:0;margin:0 auto;grid-template-columns:1fr;border-radius:22px}
+ .auth-left{padding:25px 25px 22px;gap:25px}
+ .logo{width:48px;height:48px}.logo img{width:40px;height:40px}
+ .welcome{max-width:none}
+ .welcome h1{font-size:clamp(2.45rem,10vw,3.5rem);margin:17px 0 12px}
+ .welcome p{font-size:.94rem;line-height:1.65}
+ .benefits{grid-template-columns:1fr;gap:9px;margin-top:20px}
+ .benefit{font-size:.82rem}
+ .benefit i{width:25px;height:25px}
+ .auth-right{padding:22px 18px 26px;border-left:0;border-top:1px solid #17445b}
+ .glass-card{max-width:none;padding:28px 23px;border-radius:19px}
+ .card-mark{width:70px;height:70px;margin-bottom:17px}.card-mark img{width:58px;height:58px}
+ .glass-card h2{font-size:1.55rem}
+ .sub{margin-bottom:22px}
+ .profile-actions{grid-template-columns:1fr 1fr}
+}
+@media(max-width:380px){
+ body{padding:10px}
+ .auth-left{padding:21px 19px}
+ .auth-right{padding:17px 12px 20px}
+ .glass-card{padding:25px 17px}
+ .profile-actions{grid-template-columns:1fr}
+ .welcome h1{font-size:2.35rem}
+}
+@media(min-width:761px) and (max-width:900px){
+ .auth-shell{grid-template-columns:1fr 1fr;min-height:560px}
+ .auth-left,.auth-right{padding:30px}
+ .welcome h1{font-size:3.1rem}
+ .glass-card{padding:28px 23px}
+}
 </style>
 </head>
 <body>
 <main class="auth-shell">
 <section class="auth-left">
 <a class="logo" href="index.html" aria-label="M~M Home"><img src="assets/mm-logo.svg" alt="M~M"></a>
-<div class="welcome"><h1>WELCOME!</h1><p>Sign in securely to save your rewards, manage your daily spins and keep your discount codes connected to your Google account.</p></div>
+<div class="welcome"><span class="eyebrow">M~M Rewards Account</span><h1>WELCOME<span>!</span></h1><p>Sign in securely to save your rewards, manage your daily spins and keep your discount codes connected to your Google account.</p><div class="benefits"><div class="benefit"><i>✓</i><span>Your spins stay saved to your Google account</span></div><div class="benefit"><i>↻</i><span>Daily limit resets automatically</span></div><div class="benefit"><i>％</i><span>Keep your discount codes in one place</span></div></div></div>
 <div class="social" aria-hidden="true"><span>◎</span><span>f</span><span>𝕏</span></div>
 </section>
 <section class="auth-right">
 <div class="glass-card">
+<div class="card-mark"><img src="assets/mm-logo.svg" alt="M~M logo"></div>
 <div id="signInView">
 <h2>Sign in</h2><p class="sub">One Google account. Your own reward history.</p>
 <button class="google-btn" id="googleBtn" type="button"><span class="google-g">G</span> Continue with Google</button>
