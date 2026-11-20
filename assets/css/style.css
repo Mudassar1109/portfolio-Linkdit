@@ -26,7 +26,7 @@
 @media(max-width:760px){.topbar .brand img{width:38px;height:38px}.topbar .brand{gap:8px}}
 
 /* Brand correction and motion fix */
-.brand img{content:url("assets/mm-logo.svg");width:44px;height:44px;object-fit:contain;border:0!important;box-shadow:none!important;animation:none!important;transform:none!important}
+.brand img{content:url("../mm-logo.svg");width:44px;height:44px;object-fit:contain;border:0!important;box-shadow:none!important;animation:none!important;transform:none!important}
 .hero-brand-mark{width:150px;height:150px;margin:0 auto 20px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:2px solid var(--cyan);background:radial-gradient(circle,#172a3c,#050d18 72%);box-shadow:0 0 28px rgba(0,217,255,.2);color:#f8fbff}
 .hero-brand-mark strong{font:900 2.65rem/1 Manrope,sans-serif;letter-spacing:-.09em;background:linear-gradient(110deg,#fff 25%,#00d9ff 62%,#087cff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-brand-mark span{font-size:.48rem;letter-spacing:.14em;font-weight:800;color:#00d9ff}
