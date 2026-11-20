@@ -486,3 +486,8 @@
 @media(max-width:950px){.blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.article-layout{grid-template-columns:1fr}.article-sidebar{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.blog-hero{padding:60px 0 38px}.blog-library-head{align-items:flex-start;flex-direction:column}.blog-grid{grid-template-columns:1fr;gap:17px}.blog-card-image{height:210px}.blog-card-body>p{min-height:0}.article-page{padding-top:25px}.article-header{text-align:left}.article-cover img{aspect-ratio:4/3;border-radius:17px}.article-layout{gap:20px}.article-sidebar{grid-template-columns:1fr}.article-chart{padding:19px}.article-bottom-nav{flex-direction:column}.blog-hero-stats div{min-width:calc(33.33% - 10px);padding:12px 9px}.blog-hero-stats strong{font-size:1rem}.blog-hero-stats span{font-size:.6rem}}
 @media(prefers-reduced-motion:reduce){.blog-card,.blog-card-image img,.proof-bar-track i{animation:none!important;transition:none!important}}
+
+/* Reliable page transitions: cover only on outgoing navigation and reset on BFCache restore. */
+.page-transition{will-change:transform;pointer-events:none}
+.page-transition.is-leaving{animation:none!important;transform:scaleY(1)!important;transform-origin:bottom;transition:transform .42s cubic-bezier(.77,0,.18,1)}
+@media(prefers-reduced-motion:reduce){.page-transition{display:none!important}}
