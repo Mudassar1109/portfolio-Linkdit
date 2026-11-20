@@ -167,3 +167,12 @@
 .testimonial-arrow:active{transform:translateY(1px) scale(.96);box-shadow:inset 4px 4px 9px rgba(0,0,0,.35)}
 .testimonial-arrow:focus-visible{outline:2px solid #00d9ff;outline-offset:4px}
 @media(max-width:760px){.testimonial-arrow{width:48px;height:48px}}
+
+/* Native-scroll review carousel: reliable arrow controls + autoplay */
+.testimonial-slider{overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-ms-overflow-style:none!important;scroll-behavior:smooth;touch-action:pan-x;mask-image:none!important}
+.testimonial-slider::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+.testimonial-track{width:max-content!important;animation:none!important;transform:none!important;will-change:auto;gap:20px}
+.testimonial-card{scroll-snap-align:start}
+.testimonial-slider{scroll-snap-type:x mandatory}
+@media(max-width:760px){.testimonial-track{gap:13px}}
+@media(prefers-reduced-motion:reduce){.testimonial-slider{scroll-behavior:auto!important}}
