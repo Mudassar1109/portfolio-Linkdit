@@ -139,3 +139,21 @@
 @keyframes testimonialMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:760px){.testimonial-slider{mask-image:linear-gradient(90deg,transparent 0,#000 3%,#000 97%,transparent 100%)}.testimonial-track{gap:13px;animation-duration:66s}.testimonial-card{flex-basis:285px;width:285px;min-height:275px;padding:20px}.testimonial-card blockquote{font-size:.86rem}}
 @media(prefers-reduced-motion:reduce){.testimonial-track{animation:none;transform:none}.testimonial-slider{overflow-x:auto;mask-image:none}}
+
+/* Hide native horizontal scrollbar on the testimonial carousel */
+.testimonial-slider{
+  overflow:hidden!important;
+  overflow-x:hidden!important;
+  scrollbar-width:none!important;
+  -ms-overflow-style:none!important;
+}
+.testimonial-slider::-webkit-scrollbar,
+.testimonial-track::-webkit-scrollbar{
+  display:none!important;
+  width:0!important;
+  height:0!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .testimonial-track{animation:none!important;transform:none!important}
+  .testimonial-slider{overflow:hidden!important;overflow-x:hidden!important}
+}
