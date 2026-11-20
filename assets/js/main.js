@@ -15,10 +15,11 @@ revealTargets.forEach((el,i)=>{el.classList.add('site-reveal');el.style.setPrope
  cards.forEach((card,n)=>{card.classList.add('site-reveal-child');card.style.setProperty('--child-delay',Math.min(n,6)*65+'ms')});
 });
 if(!reduceMotion&&'IntersectionObserver'in window){
- const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:0.01,rootMargin:'0px 0px -8% 0px'});
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:0,rootMargin:'0px'});
  revealTargets.forEach(el=>observer.observe(el));
- // Failsafe: never leave content hidden if the browser delays observer callbacks.
- window.setTimeout(()=>revealTargets.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('is-visible')}),900);
+ const revealViewport=()=>revealTargets.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*1.05&&r.bottom>0)el.classList.add('is-visible')});
+ requestAnimationFrame(revealViewport);window.addEventListener('load',revealViewport,{once:true});
+ window.setTimeout(()=>revealTargets.forEach(el=>el.classList.add('is-visible')),2200);
 }else revealTargets.forEach(el=>el.classList.add('is-visible'));
 if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
 const reviewSlider=document.querySelector('.testimonial-slider'),reviewTrack=reviewSlider?.querySelector('.testimonial-track');
