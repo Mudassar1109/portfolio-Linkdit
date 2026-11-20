@@ -491,3 +491,19 @@
 .page-transition{will-change:transform;pointer-events:none}
 .page-transition.is-leaving{animation:none!important;transform:scaleY(1)!important;transform-origin:bottom;transition:transform .42s cubic-bezier(.77,0,.18,1)}
 @media(prefers-reduced-motion:reduce){.page-transition{display:none!important}}
+
+
+/* Blog search: integrated magnifier icon and polished responsive field */
+.blog-search-wrap{width:min(100%,680px);margin:24px 0 30px}
+.blog-search{position:relative;display:flex;align-items:center;width:100%;min-height:58px;border:1px solid rgba(0,217,255,.32);border-radius:16px;background:linear-gradient(145deg,rgba(13,34,54,.96),rgba(6,18,32,.98));box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 10px 28px rgba(0,0,0,.16);transition:border-color .25s ease,box-shadow .25s ease}
+.blog-search:focus-within{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,217,255,.10),0 12px 32px rgba(0,0,0,.2)}
+.blog-search>span{position:absolute;left:19px;top:50%;transform:translateY(-52%);z-index:1;color:var(--cyan);font-size:0;width:18px;height:18px;pointer-events:none}
+.blog-search>span:before{content:"";position:absolute;width:10px;height:10px;border:2px solid currentColor;border-radius:50%;left:0;top:0}
+.blog-search>span:after{content:"";position:absolute;width:7px;height:2px;border-radius:2px;background:currentColor;transform:rotate(45deg);left:10px;top:12px;transform-origin:left center}
+.blog-search input{appearance:none;-webkit-appearance:none;display:block;width:100%;min-width:0;height:56px;margin:0;padding:0 54px 0 52px;border:0!important;outline:0!important;border-radius:16px;background:transparent!important;color:#f4f8ff!important;font:500 1rem Manrope,sans-serif!important;box-shadow:none!important}
+.blog-search input::placeholder{color:#91a6bb;opacity:1}
+.blog-search input::-webkit-search-cancel-button{-webkit-appearance:none}
+.blog-search button{position:absolute;right:9px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid rgba(0,217,255,.2);border-radius:10px;background:rgba(0,217,255,.08);color:#ccefff;font-size:1.25rem;line-height:1;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+.blog-search button:hover{background:rgba(0,217,255,.18);border-color:var(--cyan)}
+.blog-search-status{margin:10px 2px 0;color:#9bb0c5;font-size:.85rem}
+@media(max-width:620px){.blog-search-wrap{margin:20px 0 25px}.blog-search{min-height:54px;border-radius:14px}.blog-search input{height:52px;font-size:.92rem!important}.blog-search>span{left:16px}.blog-search input{padding-left:47px}}
