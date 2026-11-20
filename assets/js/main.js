@@ -3,9 +3,35 @@ const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches
 const menu=document.getElementById('menuToggle'),mobile=document.getElementById('mobileNav');
 if(menu&&mobile){menu.addEventListener('click',()=>{const open=mobile.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'✕':'☰'});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}))}
 const transition=document.querySelector('.page-transition');
-if(transition&&!reduceMotion){
- const cover=url=>{transition.classList.add('is-leaving');window.setTimeout(()=>{window.location.href=url},570)};
- document.addEventListener('click',e=>{const a=e.target.closest('a[href]');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;const raw=a.getAttribute('href');if(!raw||raw.startsWith('#')||raw.startsWith('mailto:')||raw.startsWith('tel:')||raw.startsWith('javascript:'))return;const dest=new URL(a.href,location.href);if(dest.origin!==location.origin||(dest.pathname===location.pathname&&dest.search===location.search&&dest.hash))return;e.preventDefault();cover(dest.href)});
+const resetPageTransition=()=>{
+ if(!transition)return;
+ transition.classList.remove('is-leaving');
+ transition.style.animation='none';
+ transition.style.transform='scaleY(0)';
+};
+if(transition){
+ // Browsers may restore the previous page from BFCache with its old transition state.
+ window.addEventListener('pageshow',event=>{
+  if(event.persisted)resetPageTransition();
+ });
+ if(!reduceMotion){
+  const cover=url=>{
+   transition.classList.add('is-leaving');
+   window.setTimeout(()=>{window.location.assign(url)},420);
+  };
+  document.addEventListener('click',e=>{
+   const a=e.target.closest('a[href]');
+   if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download')||a.hasAttribute('data-no-transition'))return;
+   const raw=a.getAttribute('href');
+   if(!raw||raw.startsWith('#')||raw.startsWith('mailto:')||raw.startsWith('tel:')||raw.startsWith('javascript:'))return;
+   const dest=new URL(a.href,location.href);
+   if(dest.origin!==location.origin)return;
+   if(dest.pathname===location.pathname&&(dest.search!==location.search||dest.hash))return;
+   if(dest.href===location.href)return;
+   e.preventDefault();
+   cover(dest.href);
+  });
+ }
 }
 // Observe actual page sections (including sections nested inside page wrappers).
 const candidates=[...document.querySelectorAll('main section, main > .container, main > .page-hero, main > .pricing-page, main > .about-page')];
