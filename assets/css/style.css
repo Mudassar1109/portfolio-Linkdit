@@ -569,3 +569,11 @@
   .footer-inner { padding-right: 0; }
   .footer-links { flex-wrap: wrap; row-gap: 12px; }
 }
+
+/* Stronger footer clearance for the fixed WhatsApp button. */
+@media (min-width: 761px) {
+  .footer-inner .footer-links {
+    margin-right: 112px !important;
+    flex-shrink: 0;
+  }
+}
