@@ -354,3 +354,12 @@
  html.js-ready main .site-reveal{transform:translate3d(0,30px,0) scale(.99)!important}
  html.js-ready main .site-reveal.is-visible{transform:none!important}
 }
+
+/* Final desktop/tablet reveal visibility correction */
+@media (min-width:761px){
+ html.js-ready .site-reveal{opacity:0!important;transform:translate3d(0,36px,0) scale(.99)!important;filter:blur(3px)!important;transition:opacity .8s cubic-bezier(.2,.75,.25,1),transform .8s cubic-bezier(.2,.75,.25,1),filter .8s ease!important;transition-delay:var(--motion-delay,0ms)!important}
+ html.js-ready .site-reveal.is-visible{opacity:1!important;transform:translate3d(0,0,0) scale(1)!important;filter:none!important}
+ html.js-ready .site-reveal-child{opacity:0!important;transform:translate3d(0,20px,0) scale(.99)!important;transition:opacity .65s ease,transform .7s cubic-bezier(.2,.75,.25,1)!important;transition-delay:var(--child-delay,0ms)!important}
+ html.js-ready .site-reveal.is-visible .site-reveal-child{opacity:1!important;transform:none!important}
+}
+@media(min-width:761px) and (max-width:1100px){html.js-ready .site-reveal{transform:translate3d(0,27px,0) scale(.995)!important}html.js-ready .site-reveal.is-visible{transform:none!important}}
