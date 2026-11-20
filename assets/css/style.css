@@ -363,3 +363,48 @@
  html.js-ready .site-reveal.is-visible .site-reveal-child{opacity:1!important;transform:none!important}
 }
 @media(min-width:761px) and (max-width:1100px){html.js-ready .site-reveal{transform:translate3d(0,27px,0) scale(.995)!important}html.js-ready .site-reveal.is-visible{transform:none!important}}
+
+/* Premium pricing page motion */
+.pricing-motion .pricing-hero .eyebrow{animation:pricingFadeUp .7s .08s both}
+.pricing-motion .pricing-hero h1{animation:pricingTitleIn .95s .16s cubic-bezier(.2,.8,.2,1) both}
+.pricing-motion .pricing-hero>p{animation:pricingFadeUp .8s .28s both}
+.pricing-motion .pricing-promo{position:relative;overflow:hidden;animation:pricingPromoIn .8s .4s both,pricingPromoGlow 3s 1.3s ease-in-out infinite}
+.pricing-motion .pricing-promo:after{content:"";position:absolute;top:-60%;left:-65%;width:40%;height:220%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:rotate(22deg);animation:pricingShimmer 5s 1.5s ease-in-out infinite}
+.pricing-motion .pricing-note{animation:pricingFadeUp .8s .48s both}
+.pricing-motion .price-card{opacity:0;animation:pricingCardEnter .9s cubic-bezier(.18,.75,.22,1) forwards;animation-delay:calc(.18s + var(--price-index,0)*.14s)}
+.pricing-motion .price-card:nth-child(1){--price-index:0}
+.pricing-motion .price-card:nth-child(2){--price-index:1}
+.pricing-motion .price-card:nth-child(3){--price-index:2}
+.pricing-motion .price-card:nth-child(4){--price-index:3}
+.pricing-motion .price-card{overflow:hidden}
+.pricing-motion .price-card:after{content:"";position:absolute;pointer-events:none;z-index:1;top:-20%;left:-90%;width:55%;height:145%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.09),transparent);transform:skewX(-18deg);animation:pricingCardShine 7s ease-in-out infinite;animation-delay:calc(1.4s + var(--price-index,0)*.65s)}
+.pricing-motion .price-card-featured{animation-name:pricingFeaturedEnter,pricingFeaturedGlow;animation-duration:.95s,4s;animation-delay:.46s,1.6s;animation-timing-function:cubic-bezier(.18,.75,.22,1),ease-in-out;animation-iteration-count:1,infinite}
+.pricing-motion .price-amount strong{display:inline-block;transform-origin:left center;animation:pricingPricePop .7s .75s cubic-bezier(.2,.8,.2,1) both}
+.pricing-motion .price-card ul li{opacity:0;animation:pricingFeatureIn .45s ease forwards;animation-delay:calc(.85s + var(--feature-index,0)*.055s + var(--price-index,0)*.12s)}
+.pricing-motion .price-card ul li:nth-child(1){--feature-index:0}.pricing-motion .price-card ul li:nth-child(2){--feature-index:1}.pricing-motion .price-card ul li:nth-child(3){--feature-index:2}.pricing-motion .price-card ul li:nth-child(4){--feature-index:3}.pricing-motion .price-card ul li:nth-child(5){--feature-index:4}.pricing-motion .price-card ul li:nth-child(6){--feature-index:5}.pricing-motion .price-card ul li:nth-child(7){--feature-index:6}.pricing-motion .price-card ul li:nth-child(8){--feature-index:7}.pricing-motion .price-card ul li:nth-child(9){--feature-index:8}.pricing-motion .price-card ul li:nth-child(10){--feature-index:9}.pricing-motion .price-card ul li:nth-child(11){--feature-index:10}.pricing-motion .price-card ul li:nth-child(12){--feature-index:11}.pricing-motion .price-card ul li:nth-child(13){--feature-index:12}
+.pricing-motion .price-card li:before{transition:transform .25s,box-shadow .25s}
+.pricing-motion .price-card li:hover:before{transform:scale(1.22) rotate(12deg);box-shadow:0 0 12px rgba(0,217,255,.35)}
+.pricing-motion .price-cta{position:relative;overflow:hidden;isolation:isolate}
+.pricing-motion .price-cta:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.3) 50%,transparent 80%);transform:translateX(-120%);transition:transform .6s}
+.pricing-motion .price-cta:hover:after{transform:translateX(120%)}
+.pricing-motion .pricing-custom{animation:pricingFadeUp .8s .35s both}
+.pricing-motion .pricing-custom .btn{transition:transform .25s,box-shadow .25s}
+.pricing-motion .pricing-custom .btn:hover{transform:translateY(-4px) scale(1.025);box-shadow:0 15px 30px rgba(0,180,255,.28)}
+.pricing-motion .pricing-fineprint h2{animation:pricingFadeUp .8s both}
+.pricing-motion .fineprint-grid p{opacity:0;animation:pricingFineIn .65s ease forwards;animation-delay:calc(.12s + var(--fine-index,0)*.1s)}
+.pricing-motion .fineprint-grid p:nth-child(1){--fine-index:0}.pricing-motion .fineprint-grid p:nth-child(2){--fine-index:1}.pricing-motion .fineprint-grid p:nth-child(3){--fine-index:2}.pricing-motion .fineprint-grid p:nth-child(4){--fine-index:3}.pricing-motion .fineprint-grid p:nth-child(5){--fine-index:4}
+@keyframes pricingFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pricingTitleIn{from{opacity:0;transform:translateY(28px) scale(.97);filter:blur(7px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes pricingPromoIn{from{opacity:0;transform:translateY(15px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pricingPromoGlow{0%,100%{box-shadow:0 0 0 rgba(0,217,255,0)}50%{box-shadow:0 0 25px rgba(0,217,255,.16)}}
+@keyframes pricingShimmer{0%,70%,100%{left:-65%}85%{left:130%}}
+@keyframes pricingCardEnter{0%{opacity:0;transform:perspective(1000px) translateY(65px) rotateX(13deg) scale(.94);filter:blur(8px)}100%{opacity:1;transform:perspective(1000px) translateY(0) rotateX(0) scale(1);filter:blur(0)}}
+@keyframes pricingFeaturedEnter{0%{opacity:0;transform:perspective(1000px) translateY(70px) rotateX(15deg) scale(.94)}100%{opacity:1;transform:translateY(-12px) scale(1);filter:none}}
+@keyframes pricingFeaturedGlow{0%,100%{box-shadow:0 25px 55px rgba(0,110,255,.24),inset 1px 1px 0 rgba(255,255,255,.2)}50%{box-shadow:0 28px 65px rgba(0,130,255,.4),0 0 32px rgba(0,217,255,.24),inset 1px 1px 0 rgba(255,255,255,.3)}}
+@keyframes pricingCardShine{0%,70%,100%{left:-90%}84%{left:140%}}
+@keyframes pricingPricePop{0%{opacity:0;transform:translateY(10px) scale(.88)}70%{transform:translateY(-3px) scale(1.04)}100%{opacity:1;transform:none}}
+@keyframes pricingFeatureIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pricingFineIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1050px){.pricing-motion .price-card-featured{animation-name:pricingCardEnter,pricingFeaturedGlow;animation-duration:.9s,4s;animation-delay:.46s,1.6s;animation-iteration-count:1,infinite}.pricing-motion .price-card-featured:hover{transform:translateY(-8px)}}
+@media(max-width:600px){.pricing-motion .price-card,.pricing-motion .price-card-featured{animation-duration:.75s;transform:none}.pricing-motion .price-card-featured{animation-name:pricingCardEnter,pricingFeaturedGlow}.pricing-motion .price-card-featured:hover{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.pricing-motion *,.pricing-motion *:before,.pricing-motion *:after{animation:none!important;transition:none!important;opacity:1!important;filter:none!important}}
