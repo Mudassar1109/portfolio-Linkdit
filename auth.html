@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505">
+<title>Google Sign In | M~M Rewards</title>
+<link rel="icon" href="assets/mm-logo.svg">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;background:#303030;color:#fff}body{min-height:100vh;display:grid;place-items:center;padding:28px}.auth-shell{width:min(1080px,100%);min-height:650px;background:#030303;border-radius:12px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;box-shadow:0 25px 90px #0008}.auth-shell:before{content:"";position:absolute;left:-6%;right:-5%;top:42%;height:250px;background:linear-gradient(110deg,transparent 5%,#061c29 18%,#1b6571 27%,#05090e 34%,#6b252a 42%,#0a1118 48%,#0c3647 57%,#020305 66%,#773c31 75%,#071923 85%,transparent 95%);filter:blur(12px);opacity:.9;transform:skewY(-7deg);clip-path:polygon(0 22%,18% 8%,34% 44%,50% 0,68% 35%,84% 12%,100% 40%,100% 80%,80% 62%,64% 100%,47% 60%,29% 90%,12% 58%,0 78%)}.auth-left,.auth-right{position:relative;z-index:1;padding:48px}.auth-left{display:flex;flex-direction:column;justify-content:space-between}.logo{width:48px;height:48px;border:1px solid #00d9ff;border-radius:50%;display:grid;place-items:center;background:#071727}.logo img{width:38px;height:38px}.welcome{margin-top:45px}.welcome h1{font-size:clamp(2.7rem,5vw,4.2rem);letter-spacing:.02em;margin:0 0 24px;font-weight:900;color:#f7fbff;text-shadow:0 2px 0 #8fa4b4,0 4px 0 #52697b,0 7px 16px #00cfff44}.welcome p{max-width:340px;color:#7d8b9c;line-height:1.7}.social{display:flex;gap:20px;color:#8b929c;font-size:1.1rem}.auth-right{display:flex;align-items:center;justify-content:center}.glass-card{width:100%;max-width:420px;min-height:420px;padding:44px 34px;border:1px solid #ffffff12;border-radius:22px;background:linear-gradient(145deg,#16191dcc,#090a0be8);backdrop-filter:blur(20px);box-shadow:0 20px 60px #0008}.glass-card h2{text-align:center;font-size:2rem;margin:0 0 12px;text-shadow:0 2px 0 #6c7d8e,0 5px 14px #00d9ff35}.sub{text-align:center;color:#8994a2;line-height:1.6;font-size:.9rem;margin-bottom:34px}.google-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:13px;padding:15px 18px;border:1px solid #d6e1ed;border-radius:12px;background:#f4f7fb;color:#18202a;font-size:1rem;font-weight:800;cursor:pointer;transition:.2s}.google-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px #00bfe533}.google-g{font-size:1.35rem;font-weight:900;color:#4285f4}.fine{margin:24px 0 0;text-align:center;color:#6f7d8b;font-size:.75rem;line-height:1.6}.status{min-height:44px;margin-top:18px;text-align:center;color:#7ceaff;font-size:.84rem;line-height:1.5}.profile{display:none;text-align:center}.avatar{width:76px;height:76px;border-radius:50%;margin:0 auto 15px;border:2px solid #00d9ff}.profile strong{display:block;font-size:1.05rem}.profile small{display:block;color:#8e9aaa;margin-top:6px;overflow-wrap:anywhere}.profile-actions{display:flex;gap:10px;margin-top:24px}.profile-actions a,.profile-actions button{flex:1;padding:12px;border-radius:10px;border:1px solid #00cfff;background:#00cfff;color:#001321;font-weight:800;text-decoration:none;cursor:pointer}.profile-actions button{background:transparent;color:#c7d5e3}.back{display:block;text-align:center;margin-top:18px;color:#8ca6b8;text-decoration:none;font-size:.85rem}.back:hover{color:#00d9ff}
+@media(max-width:760px){body{padding:14px}.auth-shell{grid-template-columns:1fr;min-height:unset}.auth-left{padding:24px 25px 0;min-height:210px}.welcome{margin:24px 0 25px}.welcome h1{font-size:2.5rem}.welcome p{font-size:.85rem;margin:0}.social{display:none}.auth-right{padding:20px 18px 30px}.glass-card{padding:34px 23px;min-height:unset}.auth-shell:before{top:28%;height:210px}}
+</style>
+</head>
+<body>
+<main class="auth-shell">
+<section class="auth-left">
+<a class="logo" href="index.html" aria-label="M~M Home"><img src="assets/mm-logo.svg" alt="M~M"></a>
+<div class="welcome"><h1>WELCOME!</h1><p>Sign in securely to save your rewards, manage your daily spins and keep your discount codes connected to your Google account.</p></div>
+<div class="social" aria-hidden="true"><span>◎</span><span>f</span><span>𝕏</span></div>
+</section>
+<section class="auth-right">
+<div class="glass-card">
+<div id="signInView">
+<h2>Sign in</h2><p class="sub">One Google account. Your own reward history.</p>
+<button class="google-btn" id="googleBtn" type="button"><span class="google-g">G</span> Continue with Google</button>
+<p class="fine">Your email and profile are used to identify your reward account. Your Google password is never shared with this website.</p>
+<div class="status" id="status" role="status" aria-live="polite">Secure sign-in powered by Supabase.</div>
+</div>
+<div class="profile" id="profileView">
+<img class="avatar" id="avatar" alt="Profile picture">
+<strong id="profileName"></strong><small id="profileEmail"></small>
+<div class="profile-actions"><a id="continueLink" href="pricing.html">Continue to Spin &amp; Win</a><button id="signOutBtn" type="button">Sign out</button></div>
+<div class="status" id="profileStatus" role="status"></div>
+</div>
+<a class="back" href="pricing.html">← Back to pricing</a>
+</div>
+</section>
+</main>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.119.1';
+const url='https://sspzsscntnlaopfrgpvr.supabase.co';
+const key='sb_publishable_eDoA81c2-EHz7PqGLwk1RA_PD5-RYGL';
+const supabase=createClient(url,key);
+const $=id=>document.getElementById(id);
+const params=new URLSearchParams(location.search);
+const next=params.get('next')==='pricing.html'?'pricing.html':'pricing.html';
+$('continueLink').href=next;
+function showUser(user){
+ $('signInView').style.display='none';$('profileView').style.display='block';
+ $('profileName').textContent=user.user_metadata?.full_name||user.user_metadata?.name||'Google account';
+ $('profileEmail').textContent=user.email||'';
+ $('avatar').src=user.user_metadata?.avatar_url||user.user_metadata?.picture||'assets/mm-logo.svg';
+}
+async function init(){
+ const {data,error}=await supabase.auth.getSession();
+ if(error){$('status').textContent=error.message;return;}
+ if(data.session?.user)showUser(data.session.user);
+}
+$('googleBtn').addEventListener('click',async()=>{
+ const btn=$('googleBtn');btn.disabled=true;$('status').textContent='Redirecting to Google…';
+ try{
+  const {error}=await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:new URL(next,location.href).href}});
+  if(error)throw error;
+ }catch(error){$('status').textContent=error.message||'Google sign-in could not start. Check the Google provider settings in Supabase.';btn.disabled=false;}
+});
+$('signOutBtn').addEventListener('click',async()=>{
+ const {error}=await supabase.auth.signOut();
+ if(error){$('profileStatus').textContent=error.message;return;}
+ $('profileView').style.display='none';$('signInView').style.display='block';$('status').textContent='You have signed out.';
+});
+supabase.auth.onAuthStateChange((_event,session)=>{if(session?.user)showUser(session.user);});
+init();
+</script>
+</body></html>
