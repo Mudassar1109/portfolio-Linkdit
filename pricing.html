@@ -5,7 +5,7 @@
 <section class="spin-promo container" aria-labelledby="spinTitle">
  <div class="spin-copy"><span class="eyebrow">A little extra for you</span><h2 id="spinTitle">Spin &amp; Win <span>your discount.</span></h2><p>Try your luck and unlock a special saving on one of our website packages. You get up to three spins each day.</p>
  <div class="spin-benefits"><div><b>✦</b><span><strong>Instant reward</strong><small>Win up to 7% OFF</small></span></div><div><b>◷</b><span><strong>Limited daily spins</strong><small>Three attempts per day</small></span></div><div><b>♛</b><span><strong>Any listed package</strong><small>Use your reward on a pricing plan</small></span></div></div></div>
- <div class="spin-game"><div class="spin-wheel-wrap"><span class="spin-pointer" aria-hidden="true"></span><div class="spin-wheel" id="discountWheel" role="img" aria-label="Prize wheel with five discount rewards and three try again sections"><span class="wheel-label" style="--a:0deg">7%<small>OFF</small></span><span class="wheel-label" style="--a:45deg">2%<small>OFF</small></span><span class="wheel-label try" style="--a:90deg">TRY<small>AGAIN</small></span><span class="wheel-label" style="--a:135deg">2%<small>OFF</small></span><span class="wheel-label try" style="--a:180deg">TRY<small>AGAIN</small></span><span class="wheel-label" style="--a:225deg">5%<small>OFF</small></span><span class="wheel-label try" style="--a:270deg">TRY<small>AGAIN</small></span><span class="wheel-label" style="--a:315deg">5%<small>OFF</small></span><span class="wheel-hub">M~M</span></div></div>
+ <div class="spin-game"><div class="reward-user-bar" id="rewardUserBar" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 auto 16px;max-width:520px"><span id="rewardUserText" style="color:#9db8ca;font-size:.85rem">Sign in with Google to save your spins and rewards.</span><a id="rewardAuthLink" class="btn small" href="auth.html?next=pricing.html">Continue with Google</a><button id="rewardSignOut" type="button" class="btn small" hidden>Sign out</button></div><div class="spin-wheel-wrap"><span class="spin-pointer" aria-hidden="true"></span><div class="spin-wheel" id="discountWheel" role="img" aria-label="Prize wheel with five discount rewards and three try again sections"><span class="wheel-label" style="--a:0deg">7%<small>OFF</small></span><span class="wheel-label" style="--a:45deg">2%<small>OFF</small></span><span class="wheel-label try" style="--a:90deg">TRY<small>AGAIN</small></span><span class="wheel-label" style="--a:135deg">2%<small>OFF</small></span><span class="wheel-label try" style="--a:180deg">TRY<small>AGAIN</small></span><span class="wheel-label" style="--a:225deg">5%<small>OFF</small></span><span class="wheel-label try" style="--a:270deg">TRY<small>AGAIN</small></span><span class="wheel-label" style="--a:315deg">5%<small>OFF</small></span><span class="wheel-hub">M~M</span></div></div>
  <button class="spin-button" id="spinButton" type="button">↻ <span>Spin Now</span></button><p class="spin-remaining" id="spinRemaining" aria-live="polite">3 / 3 spins left today</p><div class="spin-result" id="spinResult" role="status" aria-live="polite"><strong id="spinResultTitle">Your reward is waiting!</strong><p id="spinResultText">Press Spin Now to reveal your offer.</p><select id="rewardPackage" class="reward-package-select" aria-label="Choose package for your reward" hidden><option value="">Choose a package</option><option value="landing">Landing Page — PKR 8,999</option><option value="custom">Custom Coded Website — PKR 19,999</option><option value="business">Business Website — PKR 16,999</option><option value="shopify">Shopify Store — PKR 12,999</option></select><a id="spinClaim" href="#" hidden>Apply reward to package ↗</a></div><p class="spin-terms">Discount rewards are valid for 24 hours. One reward per project; terms and package scope apply.</p></div>
 </section><section class="pricing-section container"><div class="pricing-grid">
 <article class="price-card" data-package="landing"><div class="price-top"><span class="price-label">START HERE</span><span class="discount-badge">50% OFF</span></div><div class="price-amount"><del>PKR 17,998</del><strong>8,999</strong><span>PKR · one-time</span></div><h2>Landing Page</h2><p class="price-desc">A focused page to present one service, product or campaign.</p><ul><li>1 custom-designed landing page (up to 6 sections)</li><li>Responsive mobile, tablet & desktop layout</li><li>WhatsApp click-to-chat button</li><li>Contact form with email delivery setup</li><li>Basic on-page SEO: title, description & headings</li><li>Social media links & favicon setup</li><li>Image compression & basic speed checks</li><li>2 revision rounds</li></ul><a class="price-cta" target="_blank" rel="noopener" href="https://wa.me/923197013743?text=Hi%20M%7EM%20Web%20Development%2C%20I%27m%20interested%20in%20the%20Landing%20Page%20package%20(PKR%208%2C999).">Choose Landing Page ↗</a></article>
@@ -14,32 +14,35 @@
 <article class="price-card" data-package="shopify"><div class="price-top"><span class="price-label">SELL ONLINE</span><span class="discount-badge">50% OFF</span></div><div class="price-amount"><del>PKR 25,998</del><strong>12,999</strong><span>PKR · one-time</span></div><h2>Shopify Store</h2><p class="price-desc">A custom-designed Shopify storefront with the essential setup to help you start selling online.</p><ul><li>Shopify store setup & configuration</li><li>Paid theme installation and customization</li><li>Custom storefront design within the selected theme</li><li>Up to 15 product uploads (content and images supplied by you)</li><li>Collections, menus and navigation setup</li><li>Essential policy pages: About, Contact, Shipping, Returns & Privacy</li><li>WhatsApp contact button integration</li><li>Up to 3 app integrations (free apps; paid app plans extra)</li><li>Basic SEO: product titles, meta descriptions, image alt text</li><li>Google Search Console setup and indexing submission assistance</li><li>Payment and delivery settings configuration guidance</li><li>1 week post-launch support for setup-related questions</li><li>2 revision rounds</li></ul><a class="price-cta" target="_blank" rel="noopener" href="https://wa.me/923197013743?text=Hi%20M%7EM%20Web%20Development%2C%20I%27m%20interested%20in%20the%20Shopify%20Store%20package%20(PKR%2012%2C999).">Choose Shopify ↗</a></article>
 </div><div class="pricing-custom"><div><span class="eyebrow">Need something different?</span><h2>Custom website or web application</h2><p>Need more pages, custom functionality, advanced integrations, booking systems or a larger store? Tell us your requirements for a separate affordable quote.</p></div><a class="btn" target="_blank" rel="noopener" href="https://wa.me/923197013743?text=Hi%20M%7EM%20Web%20Development%2C%20I%20need%20a%20custom%20project%20quote.">Get Custom Quote ↗</a></div></section>
 <section class="pricing-fineprint container"><h2>Good to know</h2><div class="fineprint-grid"><p><strong>What’s included:</strong> The deliverables listed in each package, based on an agreed project scope.</p><p><strong>Separate costs:</strong> Domain, hosting, Shopify subscription, premium themes, paid apps, paid plugins, email services and third-party charges are not included. Free themes and free plugin options are used where suitable.</p><p><strong>You provide:</strong> Logo, brand details, written content, product information and images. Content writing, premium stock assets and product photography are add-ons.</p><p><strong>Before starting:</strong> We confirm the scope, delivery timeline, content requirements and payment milestones in writing. Work begins after the agreed advance.</p><p><strong>50% offer:</strong> Discount is calculated against the listed standard package price. Only advertise it while this offer is genuinely available; do not present it as a previous sale price unless that is true. Add-ons are quoted separately.</p></div></section></main>
-<script>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.119.1';
 (()=>{
  const wheel=document.getElementById('discountWheel'),button=document.getElementById('spinButton');
  if(!wheel||!button)return;
- const API='https://sspzsscntnlaopfrgpvr.supabase.co/functions/v1/reward-api';
- const API_KEY='sb_publishable_eDoA81c2-EHz7PqGLwk1RA_PD5-RYGL';
+ const SUPABASE_URL='https://sspzsscntnlaopfrgpvr.supabase.co';
+ const SUPABASE_KEY='sb_publishable_eDoA81c2-EHz7PqGLwk1RA_PD5-RYGL';
+ const supabase=createClient(SUPABASE_URL,SUPABASE_KEY);
+ const API=SUPABASE_URL+'/functions/v1/reward-api';
  const remaining=document.getElementById('spinRemaining'),title=document.getElementById('spinResultTitle'),message=document.getElementById('spinResultText'),claim=document.getElementById('spinClaim');
  const packageSelect=document.getElementById('rewardPackage');
- const packages={
-   landing:{price:8999,label:'Landing Page'},
-   custom:{price:19999,label:'Custom Coded Website'},
-   business:{price:16999,label:'Business Website'},
-   shopify:{price:12999,label:'Shopify Store'}
- };
- let rotation=0,busy=false,lastReward=null,spinsLeft=3,resetAt=null,countdownTimer=null;
+ const userText=document.getElementById('rewardUserText'),authLink=document.getElementById('rewardAuthLink'),signOut=document.getElementById('rewardSignOut');
+ const packages={landing:{price:8999,label:'Landing Page'},custom:{price:19999,label:'Custom Coded Website'},business:{price:16999,label:'Business Website'},shopify:{price:12999,label:'Shopify Store'}};
+ let rotation=0,busy=false,lastReward=null,spinsLeft=3,resetAt=null,countdownTimer=null,currentUser=null;
  const formatPKR=value=>Number(value).toLocaleString('en-PK');
+ const getSession=async()=>{const {data,error}=await supabase.auth.getSession();if(error)throw error;return data.session;};
  const callApi=async(payload)=>{
-   const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','apikey':API_KEY},body:JSON.stringify(payload)});
+   const session=await getSession();
+   if(!session?.access_token)throw Object.assign(new Error('Sign in with Google before using Spin & Win.'),{status:401});
+   const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+session.access_token},body:JSON.stringify(payload)});
    const data=await response.json().catch(()=>({error:'Unexpected server response.'}));
    if(!response.ok)throw Object.assign(new Error(data.error||'Request failed.'),{data,status:response.status});
    return data;
  };
  const update=()=>{
-   button.disabled=busy||spinsLeft<=0;
-   button.querySelector('span').textContent=spinsLeft<=0?'Come back tomorrow':'Spin Now';
-   if(spinsLeft>0)remaining.textContent=spinsLeft+' / 3 spins left today';
+   button.disabled=busy||spinsLeft<=0||!currentUser;
+   button.querySelector('span').textContent=!currentUser?'Sign in to Spin':spinsLeft<=0?'Come back tomorrow':'Spin Now';
+   if(!currentUser)remaining.textContent='Google sign-in required to start your daily spins.';
+   else if(spinsLeft>0)remaining.textContent=spinsLeft+' / 3 spins left today';
    else updateCountdown();
  };
  const updateCountdown=()=>{
@@ -49,34 +52,31 @@
    remaining.textContent=ms>0?'Daily limit reached · Resets in '+h+':'+m+':'+s:'Daily spins are resetting…';
    if(ms<=0){clearInterval(countdownTimer);refreshSpinStatus();}
  };
- const startCountdown=()=>{
-   clearInterval(countdownTimer);
-   updateCountdown();
-   countdownTimer=setInterval(updateCountdown,1000);
- };
+ const startCountdown=()=>{clearInterval(countdownTimer);updateCountdown();countdownTimer=setInterval(updateCountdown,1000);};
  async function refreshSpinStatus(){
-   try{
-     const data=await callApi({action:'spin-status'});
-     spinsLeft=data.spins_remaining;
-     resetAt=data.reset_at;
-     update();
-     if(spinsLeft<=0)startCountdown();
-   }catch(error){
-     remaining.textContent='Unable to check daily spins. Please refresh.';
-   }
+   if(!currentUser){spinsLeft=3;resetAt=null;update();return;}
+   try{const data=await callApi({action:'spin-status'});spinsLeft=data.spins_remaining;resetAt=data.reset_at;update();if(spinsLeft<=0)startCountdown();}
+   catch(error){remaining.textContent=error.message;update();}
  }
+ function setUser(user){
+   currentUser=user||null;
+   if(user){
+     const name=user.user_metadata?.full_name||user.user_metadata?.name||user.email||'Google user';
+     userText.textContent='Signed in as '+name;
+     authLink.hidden=true;signOut.hidden=false;
+   }else{
+     userText.textContent='Sign in with Google to save your spins and rewards.';
+     authLink.hidden=false;signOut.hidden=true;
+     spinsLeft=3;resetAt=null;
+   }
+   update();
+ }
+ signOut.addEventListener('click',async()=>{await supabase.auth.signOut();lastReward=null;packageSelect.hidden=true;claim.hidden=true;setUser(null);message.textContent='You have signed out.';});
  const originalCardState=new Map();
  function getCard(key){return document.querySelector('.price-card[data-package="'+key+'"]');}
  function applyPackagePreview(key,percent,finalPrice){
-   const card=getCard(key),pkg=packages[key];
-   if(!card||!pkg)return;
-   if(!originalCardState.has(key)){
-     originalCardState.set(key,{
-       del:card.querySelector('.price-amount del')?.textContent||'',
-       strong:card.querySelector('.price-amount strong')?.textContent||'',
-       badge:card.querySelector('.discount-badge')?.textContent||''
-     });
-   }
+   const card=getCard(key),pkg=packages[key];if(!card||!pkg)return;
+   if(!originalCardState.has(key))originalCardState.set(key,{del:card.querySelector('.price-amount del')?.textContent||'',strong:card.querySelector('.price-amount strong')?.textContent||'',badge:card.querySelector('.discount-badge')?.textContent||''});
    const del=card.querySelector('.price-amount del'),strong=card.querySelector('.price-amount strong'),badge=card.querySelector('.discount-badge');
    if(del)del.textContent='PKR '+formatPKR(pkg.price);
    if(strong)strong.textContent=formatPKR(finalPrice);
@@ -84,77 +84,56 @@
    let note=card.querySelector('.wheel-price-note');
    if(!note){note=document.createElement('small');note.className='wheel-price-note';note.style.cssText='display:block;color:#75edff;font-size:.72rem;font-weight:700;margin-top:5px';card.querySelector('.price-amount')?.appendChild(note);}
    if(note)note.textContent='Wheel reward: PKR '+formatPKR(pkg.price-finalPrice)+' saved';
-   card.dataset.wheelDiscount='true';
  }
  function restorePackagePreview(key){
-   const card=getCard(key),original=originalCardState.get(key);
-   if(!card||!original)return;
+   const card=getCard(key),original=originalCardState.get(key);if(!card||!original)return;
    const del=card.querySelector('.price-amount del'),strong=card.querySelector('.price-amount strong'),badge=card.querySelector('.discount-badge');
-   if(del)del.textContent=original.del;
-   if(strong)strong.textContent=original.strong;
-   if(badge)badge.textContent=original.badge;
-   card.querySelector('.wheel-price-note')?.remove();
-   delete card.dataset.wheelDiscount;
+   if(del)del.textContent=original.del;if(strong)strong.textContent=original.strong;if(badge)badge.textContent=original.badge;
+   card.querySelector('.wheel-price-note')?.remove();delete card.dataset.wheelDiscount;
  }
  function restoreAllPackagePreviews(){for(const key of originalCardState.keys())restorePackagePreview(key);}
- const showReward=(reward)=>{
-   lastReward=reward;
-   title.textContent='Congratulations! You won '+reward.discount_percent+'% OFF';
+ const showReward=reward=>{
+   lastReward=reward;title.textContent='Congratulations! You won '+reward.discount_percent+'% OFF';
    message.textContent='Your secure reward code is '+reward.code+'. Select a package and its price will update automatically.';
    packageSelect.hidden=false;packageSelect.disabled=false;packageSelect.value='';
-   claim.hidden=false;claim.disabled=false;claim.dataset.whatsapp='0';claim.textContent='Apply reward to package ↗';claim.href='#';
-   restoreAllPackagePreviews();
+   claim.hidden=false;claim.disabled=false;claim.dataset.whatsapp='0';claim.textContent='Apply reward to package ↗';claim.href='#';restoreAllPackagePreviews();
  };
  packageSelect.addEventListener('change',()=>{
-   if(!lastReward||!packageSelect.value)return;
-   const pkg=packages[packageSelect.value];
-   if(!pkg)return;
+   if(!lastReward||!packageSelect.value)return;const pkg=packages[packageSelect.value];if(!pkg)return;
    const discount=Math.round(pkg.price*lastReward.discount_percent/100);
    applyPackagePreview(packageSelect.value,lastReward.discount_percent,pkg.price-discount);
    message.textContent=pkg.label+': PKR '+formatPKR(pkg.price)+' − '+lastReward.discount_percent+'% = PKR '+formatPKR(pkg.price-discount)+'. Press Apply reward to confirm.';
  });
  button.addEventListener('click',async()=>{
    if(busy||spinsLeft<=0)return;
+   if(!currentUser){location.href='auth.html?next=pricing.html';return;}
    busy=true;update();title.textContent='Connecting to reward server…';message.textContent='Your spin is being securely processed.';claim.hidden=true;
    try{
-     const result=await callApi({action:'spin'});
-     spinsLeft=result.spins_remaining;resetAt=result.reset_at||resetAt;
+     const result=await callApi({action:'spin'});spinsLeft=result.spins_remaining;resetAt=result.reset_at||resetAt;
      const slices=[{outcome:'7',index:0},{outcome:'2',index:1},{outcome:'try_again',index:2},{outcome:'2',index:3},{outcome:'try_again',index:4},{outcome:'5',index:5},{outcome:'try_again',index:6},{outcome:'5',index:7}];
      const target=slices.find(x=>x.outcome===result.outcome)?.index??2;
-     const current=((rotation%360)+360)%360,desired=360-(target*45);
-     rotation+=360*6+((desired-current+360)%360);
-     wheel.style.transform='rotate('+rotation+'deg)';
-     await new Promise(resolve=>setTimeout(resolve,5350));
-     if(result.reward)showReward(result.reward);
-     else{title.textContent='Try Again!';message.textContent='No discount this time. You have '+spinsLeft+' spin(s) left today.';}
-   }catch(error){
-     if(error.data?.reset_at){spinsLeft=0;resetAt=error.data.reset_at;startCountdown();}
-     title.textContent='Unable to spin right now';message.textContent=error.message;
-   }finally{busy=false;update();if(spinsLeft<=0)startCountdown();}
+     const current=((rotation%360)+360)%360,desired=360-(target*45);rotation+=360*6+((desired-current+360)%360);
+     wheel.style.transform='rotate('+rotation+'deg)';await new Promise(resolve=>setTimeout(resolve,5350));
+     if(result.reward)showReward(result.reward);else{title.textContent='Try Again!';message.textContent='No discount this time. You have '+spinsLeft+' spin(s) left today.';}
+   }catch(error){if(error.data?.reset_at){spinsLeft=0;resetAt=error.data.reset_at;startCountdown();}title.textContent='Unable to spin right now';message.textContent=error.message;}
+   finally{busy=false;update();if(spinsLeft<=0)startCountdown();}
  });
- claim.addEventListener('click',async(event)=>{
-   if(claim.dataset.whatsapp==='1'){
-     // We can detect the WhatsApp handoff click, not whether the customer actually sends the message.
-     setTimeout(()=>restoreAllPackagePreviews(),700);
-     return;
-   }
+ claim.addEventListener('click',async event=>{
+   if(claim.dataset.whatsapp==='1'){setTimeout(()=>restoreAllPackagePreviews(),700);return;}
    event.preventDefault();
    if(!lastReward||!packageSelect.value){message.textContent='Please select a package first.';packageSelect.focus();return;}
    claim.disabled=true;claim.textContent='Calculating…';
    try{
-     const result=await callApi({action:'claim',code:lastReward.code,package_key:packageSelect.value});
-     const r=result.reward;
+     const result=await callApi({action:'claim',code:lastReward.code,package_key:packageSelect.value}),r=result.reward;
      applyPackagePreview(r.package_key,r.discount_percent,r.final_price_pkr);
      const text='Hi M~M Web Development! I won '+r.discount_percent+'% OFF. Reward code: '+r.code+'. Package: '+result.package_label+'. Original price: PKR '+formatPKR(r.package_price_pkr)+'. Discount: PKR '+formatPKR(r.discount_amount_pkr)+'. Final price: PKR '+formatPKR(r.final_price_pkr)+'. Please confirm my reward.';
      title.textContent='Reward applied to '+result.package_label;
-     message.textContent='Original: PKR '+formatPKR(r.package_price_pkr)+' · Discount: PKR '+formatPKR(r.discount_amount_pkr)+' · Final: PKR '+formatPKR(r.final_price_pkr)+'. The package price will return to normal after opening WhatsApp.';
-     claim.textContent='Send details on WhatsApp ↗';claim.href='https://wa.me/923197013743?text='+encodeURIComponent(text);
-     claim.dataset.whatsapp='1';claim.target='_blank';claim.rel='noopener';claim.disabled=false;
-     packageSelect.disabled=true;
+     message.textContent='Original: PKR '+formatPKR(r.package_price_pkr)+' · Discount: PKR '+formatPKR(r.discount_amount_pkr)+' · Final: PKR '+formatPKR(r.final_price_pkr)+'. Price returns to normal after WhatsApp handoff.';
+     claim.textContent='Send details on WhatsApp ↗';claim.href='https://wa.me/923197013743?text='+encodeURIComponent(text);claim.dataset.whatsapp='1';claim.target='_blank';claim.rel='noopener';claim.disabled=false;packageSelect.disabled=true;
    }catch(error){message.textContent=error.message;claim.disabled=false;claim.textContent='Apply reward to package ↗';}
  });
- update();
- refreshSpinStatus();
+ supabase.auth.onAuthStateChange((_event,session)=>{setUser(session?.user||null);if(session?.user)refreshSpinStatus();});
+ (async()=>{const session=await getSession();setUser(session?.user||null);await refreshSpinStatus();})();
 })();
 </script>
 <footer class="footer"><div class="container footer-inner"><span>© 2026 M~M Web Development · Muhammad Mudassar Elahi</span><div class="footer-links"><a href="about.html">About</a><a href="projects.html">Projects</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div></div></footer><a class="whatsapp" href="https://wa.me/923197013743" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt="" width="30" height="30"></a></body></html>
