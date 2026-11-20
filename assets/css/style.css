@@ -342,3 +342,15 @@
 @keyframes navEnter{from{opacity:0;transform:translateY(-18px) scale(.98)}to{opacity:1;transform:none}}
 .price-card,.project-card,.service-card,.tech-card,.trust-v3-step,.trust-point,.testimonial-card,.faq-item,.about-card,.contact-card{transform-style:preserve-3d;backface-visibility:hidden}
 @media(prefers-reduced-motion:reduce){.page-transition{display:none!important}.js-ready main>.site-reveal,.js-ready .site-reveal-child{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.js-ready .hero-grid>*,.js-ready .topbar{animation:none!important}}
+
+/* Desktop + tablet animation reliability patch */
+@media (min-width:761px){
+ html.js-ready main .site-reveal{opacity:0!important;transform:translate3d(0,38px,0) scale(.985)!important;filter:blur(4px)!important;transition:opacity .82s cubic-bezier(.2,.75,.25,1),transform .82s cubic-bezier(.2,.75,.25,1),filter .82s ease!important;transition-delay:var(--motion-delay,0ms)!important}
+ html.js-ready main .site-reveal.is-visible{opacity:1!important;transform:translate3d(0,0,0) scale(1)!important;filter:blur(0)!important}
+ html.js-ready main .site-reveal .site-reveal-child{opacity:0!important;transform:translate3d(0,24px,0) scale(.99)!important;transition:opacity .68s ease,transform .72s cubic-bezier(.2,.75,.25,1)!important;transition-delay:var(--child-delay,0ms)!important}
+ html.js-ready main .site-reveal.is-visible .site-reveal-child{opacity:1!important;transform:none!important}
+}
+@media (min-width:761px) and (max-width:1100px){
+ html.js-ready main .site-reveal{transform:translate3d(0,30px,0) scale(.99)!important}
+ html.js-ready main .site-reveal.is-visible{transform:none!important}
+}
