@@ -22,7 +22,7 @@
  const API_KEY='sb_publishable_eDoA81c2-EHz7PqGLwk1RA_PD5-RYGL';
  const remaining=document.getElementById('spinRemaining'),title=document.getElementById('spinResultTitle'),message=document.getElementById('spinResultText'),claim=document.getElementById('spinClaim');
  const packageSelect=document.getElementById('rewardPackage');
- let rotation=0,busy=false,lastReward=null,spinsLeft=3;
+ let rotation=0,busy=false,lastReward=null,spinsLeft=3,rewardApplied=false;
  const callApi=async(payload)=>{
    const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','apikey':API_KEY},body:JSON.stringify(payload)});
    const data=await response.json().catch(()=>({error:'Unexpected server response.'}));
@@ -65,7 +65,7 @@
      const text='Hi M~M Web Development! I won '+r.discount_percent+'% OFF. Reward code: '+r.code+'. Package: '+result.package_label+'. Original price: PKR '+r.package_price_pkr.toLocaleString('en-PK')+'. Discount: PKR '+r.discount_amount_pkr.toLocaleString('en-PK')+'. Final price: PKR '+r.final_price_pkr.toLocaleString('en-PK')+'. Please confirm my reward.';
      title.textContent='Reward applied to '+result.package_label;
      message.textContent='Original: PKR '+r.package_price_pkr.toLocaleString('en-PK')+' · Discount: PKR '+r.discount_amount_pkr.toLocaleString('en-PK')+' · Final: PKR '+r.final_price_pkr.toLocaleString('en-PK');
-     claim.textContent='Send details on WhatsApp ↗';claim.href='https://wa.me/923197013743?text='+encodeURIComponent(text);claim.onclick=null;claim.removeEventListener('click',arguments.callee);
+     claim.textContent='Send details on WhatsApp ↗';claim.href='https://wa.me/923197013743?text='+encodeURIComponent(text);rewardApplied=true;
      claim.target='_blank';claim.rel='noopener';
      packageSelect.disabled=true;
    }catch(error){message.textContent=error.message;claim.disabled=false;claim.textContent='Apply reward to package ↗';}
