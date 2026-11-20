@@ -60,13 +60,18 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.119.1';
  }
  function setUser(user){
    currentUser=user||null;
+   // Keep the account entry visible at all times; hiding it made the login action hard to find.
+   authLink.hidden=false;
+   authLink.style.display='inline-flex';
+   authLink.textContent=user?'My Google Account':'Sign in with Google';
+   authLink.href='auth.html?next=pricing.html';
    if(user){
      const name=user.user_metadata?.full_name||user.user_metadata?.name||user.email||'Google user';
      userText.textContent='Signed in as '+name;
-     authLink.hidden=true;signOut.hidden=false;
+     signOut.hidden=false;
    }else{
      userText.textContent='Sign in with Google to save your spins and rewards.';
-     authLink.hidden=false;signOut.hidden=true;
+     signOut.hidden=true;
      spinsLeft=3;resetAt=null;
    }
    update();
