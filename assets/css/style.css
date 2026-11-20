@@ -530,3 +530,8 @@
 @media(max-width:850px){.services-list{column-gap:28px}.service-line{grid-template-columns:62px minmax(0,1fr) 28px;gap:14px}.service-line-icon{width:58px;height:58px;border-radius:18px}.service-line-icon svg{width:29px;height:29px}}
 @media(max-width:620px){.services-list{grid-template-columns:1fr}.service-line{min-height:126px;grid-template-columns:58px minmax(0,1fr) 28px;gap:13px;padding:20px 0}.service-line:nth-last-child(-n+2){border-bottom:1px solid rgba(133,208,255,.16)}.service-line:last-child{border-bottom:0}.service-line-copy h3{font-size:.98rem}.service-line-copy p{font-size:.75rem}.service-line-icon{width:54px;height:54px;border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.service-line,.service-line:before,.service-line-icon,.service-line-link{transition:none!important}}
+
+/* Wheel layout alignment: labels sit at the center of each 45-degree prize slice */
+.wheel-label{transform:rotate(var(--a)) translateY(-112px) rotate(calc(-1*var(--a)))}
+@media(max-width:850px){.wheel-label{transform:rotate(var(--a)) translateY(-99px) rotate(calc(-1*var(--a)))}}
+@media(max-width:520px){.wheel-label{transform:rotate(var(--a)) translateY(-84px) rotate(calc(-1*var(--a)))}}
