@@ -73,10 +73,22 @@
       <input id="password" type="password" placeholder="Admin password" autocomplete="current-password" aria-label="Admin password" required>
       <button class="action-btn" id="loginBtn" type="submit">Sign in</button>
     </form>
+    <div class="auth-tools" id="loginRecoveryTools">
+      <button class="action-btn secondary" id="forgotBtn" type="button">Forgot password?</button>
+    </div>
     <div class="auth-tools" id="authTools" hidden>
       <button class="action-btn secondary" id="refreshBtn" type="button">Refresh records</button>
+      <button class="action-btn secondary" id="showPasswordBtn" type="button">Change password</button>
       <button class="action-btn secondary" id="logoutBtn" type="button">Sign out</button>
     </div>
+    <form id="changePasswordForm" class="auth-card" style="margin-top:14px;max-width:760px" hidden>
+      <h3 style="margin:0 0 12px;color:#eefaff">Update admin password</h3>
+      <input id="newPassword" type="password" minlength="12" autocomplete="new-password" placeholder="New password (minimum 12 characters)" required style="display:block;width:100%;box-sizing:border-box;min-height:48px;padding:12px;margin-bottom:10px;border:1px solid rgba(0,217,255,.25);border-radius:10px;background:#061a2b;color:#fff">
+      <input id="confirmPassword" type="password" minlength="12" autocomplete="new-password" placeholder="Confirm new password" required style="display:block;width:100%;box-sizing:border-box;min-height:48px;padding:12px;margin-bottom:10px;border:1px solid rgba(0,217,255,.25);border-radius:10px;background:#061a2b;color:#fff">
+      <button class="action-btn" id="savePasswordBtn" type="submit">Save new password</button>
+      <button class="action-btn secondary" id="cancelPasswordBtn" type="button">Cancel</button>
+      <p style="color:#9bb4c9;font-size:.76rem;margin-bottom:0">Use a unique password that you do not use on other websites. Password is sent securely to Supabase Auth and is not stored in this page.</p>
+    </form>
     <p class="status-line" id="status" role="status" aria-live="polite">Sign in using the authorized admin account.</p>
   </section>
   <div id="dashboard" hidden>
@@ -108,7 +120,7 @@ let session=null,records=[];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>v==null?'—':'PKR '+Number(v).toLocaleString('en-PK');
 const date=v=>v?new Date(v).toLocaleString('en-PK',{dateStyle:'medium',timeStyle:'short'}):'—';
-function setSignedIn(on){$('loginForm').hidden=on;$('authTools').hidden=!on;$('dashboard').hidden=!on;}
+function setSignedIn(on){$('loginForm').hidden=on;$('loginRecoveryTools').hidden=on;$('authTools').hidden=!on;$('dashboard').hidden=!on;if(!on)$('changePasswordForm').hidden=true;}
 function message(t){$('status').textContent=t;}
 async function apiCall(action,extra={}) {
   if(!session?.access_token) throw new Error('Session expired. Please sign in again.');
@@ -153,6 +165,34 @@ $('loginForm').addEventListener('submit',async e=>{
     if(error)throw error;
     session=data.session;$('password').value='';setSignedIn(true);await load();
   }catch(err){message(err.message||'Sign-in failed.');}
+  finally{btn.disabled=false;}
+});
+$('forgotBtn').addEventListener('click',async()=>{
+  const email=$('email').value.trim();
+  if(!email){message('Enter your admin email first.');return;}
+  const btn=$('forgotBtn');btn.disabled=true;message('Sending password reset email…');
+  try{
+    const {error}=await supabase.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin+window.location.pathname});
+    if(error)throw error;
+    message('If email password recovery is enabled, a reset link has been sent. Check inbox and spam.');
+  }catch(err){message(err.message||'Could not send password reset email.');}
+  finally{btn.disabled=false;}
+});
+$('showPasswordBtn').addEventListener('click',()=>{$('changePasswordForm').hidden=!$('changePasswordForm').hidden;});
+$('cancelPasswordBtn').addEventListener('click',()=>{$('changePasswordForm').hidden=true;$('newPassword').value='';$('confirmPassword').value='';});
+$('changePasswordForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const next=$('newPassword').value,confirm=$('confirmPassword').value,btn=$('savePasswordBtn');
+  if(next.length<12){message('Password must be at least 12 characters.');return;}
+  if(next!==confirm){message('New password and confirmation do not match.');return;}
+  if(!session){message('Please sign in again before changing your password.');return;}
+  btn.disabled=true;message('Updating password securely…');
+  try{
+    const {error}=await supabase.auth.updateUser({password:next});
+    if(error)throw error;
+    $('newPassword').value='';$('confirmPassword').value='';$('changePasswordForm').hidden=true;
+    message('Password updated successfully. Use your new password next time you sign in.');
+  }catch(err){message(err.message||'Password update failed.');}
   finally{btn.disabled=false;}
 });
 $('refreshBtn').addEventListener('click',load);
