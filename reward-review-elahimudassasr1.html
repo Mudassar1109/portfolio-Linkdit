@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#050d18">
+<title>Private Reward Review | M~M Web Development</title>
+<link rel="icon" href="assets/mm-logo.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.review-wrap{width:min(1180px,calc(100% - 36px));margin:56px auto 80px}
+.review-panel{padding:clamp(20px,3vw,34px);border:1px solid rgba(0,217,255,.28);border-radius:25px;background:linear-gradient(145deg,rgba(10,32,51,.98),rgba(4,14,26,.99));box-shadow:0 24px 65px rgba(0,0,0,.3),0 0 35px rgba(0,190,255,.06)}
+.review-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}
+.review-heading h1{margin:12px 0 8px;font:800 clamp(1.8rem,4vw,2.5rem)/1.12 Manrope,sans-serif;letter-spacing:-.05em;color:#f3f8ff}
+.review-heading p{margin:0;color:#a7bfd2;max-width:680px}
+.private-badge{display:inline-flex;padding:7px 13px;border:1px solid rgba(0,217,255,.35);border-radius:99px;background:rgba(0,217,255,.08);color:#8defff;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+.auth-card{max-width:760px;padding:20px;border:1px solid rgba(0,217,255,.2);border-radius:17px;background:rgba(3,17,29,.55)}
+.auth-form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px}
+.auth-form input{min-width:0;width:100%;min-height:49px;padding:12px 14px;border:1px solid rgba(0,217,255,.25);border-radius:11px;background:#061a2b;color:#f3f8ff;outline:none}
+.auth-form input:focus{border-color:#00d9ff;box-shadow:0 0 0 3px rgba(0,217,255,.1)}
+.auth-form input[type=email]{background:#e8f1ff;color:#081827}
+.action-btn{min-height:43px;padding:10px 15px;border:1px solid #00d9ff;border-radius:10px;background:#00d9ff;color:#031827;font-weight:800;cursor:pointer;transition:transform .2s,filter .2s}
+.action-btn:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.08)}
+.action-btn:disabled{opacity:.55;cursor:wait}
+.action-btn.secondary{background:rgba(0,217,255,.08);color:#bcefff}
+.action-btn.danger{background:rgba(190,54,86,.16);border-color:rgba(255,104,140,.5);color:#ffc1d0}
+.auth-tools{display:flex;gap:10px;margin-top:13px}
+.status-line{min-height:24px;margin:14px 0 0;color:#8defff;font-size:.86rem}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+.stat-card{padding:16px;border:1px solid rgba(0,217,255,.17);border-radius:15px;background:linear-gradient(145deg,rgba(9,34,53,.88),rgba(4,18,30,.9))}
+.stat-card span{display:block;color:#9bb4c9;font-size:.74rem}
+.stat-card strong{display:block;margin-top:5px;color:#f4fbff;font:800 1.55rem Manrope,sans-serif}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 12px}
+.toolbar h2{margin:0;font:800 1.15rem Manrope,sans-serif}
+.toolbar select{min-height:42px;padding:8px 12px;border:1px solid rgba(0,217,255,.25);border-radius:10px;background:#061a2b;color:#eaf7ff}
+.table-wrap{width:100%;overflow-x:auto;border:1px solid rgba(0,217,255,.15);border-radius:15px}
+.reward-table{width:100%;min-width:940px;border-collapse:collapse}
+.reward-table th,.reward-table td{padding:14px 12px;border-bottom:1px solid rgba(133,208,255,.12);text-align:left;color:#c8d9e8;font-size:.8rem;vertical-align:middle}
+.reward-table th{color:#7deaff;background:rgba(0,217,255,.045);font-size:.73rem;letter-spacing:.04em;text-transform:uppercase}
+.reward-table tr:last-child td{border-bottom:0}
+.code-cell{font-weight:800;letter-spacing:.04em;color:#f4fbff!important}
+.muted-cell{color:#94aec2!important}
+.status-pill{display:inline-flex;padding:5px 9px;border-radius:99px;font-size:.68rem;font-weight:800;text-transform:capitalize;background:rgba(0,217,255,.09);color:#9beeff;border:1px solid rgba(0,217,255,.2)}
+.status-pill.redeemed{background:rgba(0,210,130,.1);color:#85f0c1;border-color:rgba(0,210,130,.25)}
+.status-pill.revoked,.status-pill.expired{background:rgba(255,90,125,.1);color:#ffb3c4;border-color:rgba(255,90,125,.25)}
+.row-actions{display:flex;gap:7px;white-space:nowrap}
+.row-actions .action-btn{min-height:34px;padding:7px 10px;font-size:.7rem}
+.empty-row{text-align:center!important;padding:30px!important;color:#9bb4c9!important}
+.security-note{margin-top:18px;padding:13px 15px;border:1px solid rgba(255,190,90,.2);border-radius:12px;background:rgba(255,190,90,.045);color:#c9b99d;font-size:.76rem;line-height:1.65}
+[hidden]{display:none!important}
+@media(max-width:800px){.review-wrap{margin:32px auto 60px}.auth-form{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.review-heading{display:block}.review-heading .private-badge{margin-bottom:6px}}
+@media(max-width:480px){.review-wrap{width:calc(100% - 24px)}.review-panel{padding:17px 13px;border-radius:19px}.stats{gap:8px}.stat-card{padding:12px}.stat-card strong{font-size:1.3rem}.toolbar{align-items:flex-start;flex-direction:column}.auth-tools{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="page-transition"></div>
+<header class="topbar">
+  <div class="nav container">
+    <a class="brand" href="index.html"><img src="assets/mm-logo.svg" alt="M~M" width="44" height="44"><strong>M~M</strong></a>
+    <nav class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></nav>
+    <div class="nav-actions"><a class="btn small" href="pricing.html">View Pricing</a></div>
+  </div>
+</header>
+<main class="review-wrap">
+<section class="review-panel">
+  <div class="review-heading">
+    <div><span class="private-badge">PRIVATE ADMIN AREA</span><h1>Reward review console</h1><p>Review customer reward codes, verify the package and amount, then confirm redemption or reject the code.</p></div>
+  </div>
+  <section class="auth-card" aria-label="Admin sign in">
+    <form class="auth-form" id="loginForm">
+      <input id="email" type="email" value="elahimudassasr1@gmail.com" autocomplete="username" aria-label="Admin email" required>
+      <input id="password" type="password" placeholder="Admin password" autocomplete="current-password" aria-label="Admin password" required>
+      <button class="action-btn" id="loginBtn" type="submit">Sign in</button>
+    </form>
+    <div class="auth-tools" id="authTools" hidden>
+      <button class="action-btn secondary" id="refreshBtn" type="button">Refresh records</button>
+      <button class="action-btn secondary" id="logoutBtn" type="button">Sign out</button>
+    </div>
+    <p class="status-line" id="status" role="status" aria-live="polite">Sign in using the authorized admin account.</p>
+  </section>
+  <div id="dashboard" hidden>
+    <div class="stats">
+      <div class="stat-card"><span>Total records</span><strong id="totalCount">0</strong></div>
+      <div class="stat-card"><span>Awaiting review</span><strong id="pendingCount">0</strong></div>
+      <div class="stat-card"><span>Redeemed</span><strong id="redeemedCount">0</strong></div>
+      <div class="stat-card"><span>Rejected / expired</span><strong id="closedCount">0</strong></div>
+    </div>
+    <div class="toolbar"><h2>Customer reward codes</h2><select id="statusFilter" aria-label="Filter rewards"><option value="all">All statuses</option><option value="unredeemed">Awaiting review</option><option value="redeemed">Redeemed</option><option value="revoked">Rejected / revoked</option><option value="expired">Expired</option></select></div>
+    <div class="table-wrap">
+      <table class="reward-table">
+        <thead><tr><th>Reward code</th><th>Discount</th><th>Package</th><th>Original</th><th>Discount value</th><th>Final price</th><th>Status</th><th>Expiry</th><th>Decision</th></tr></thead>
+        <tbody id="rewardRows"><tr><td class="empty-row" colspan="9">No records loaded.</td></tr></tbody>
+      </table>
+    </div>
+    <div class="security-note">Confirm / Redeem changes the code status to <b>redeemed</b> and it can no longer be used. Reject / Revoke permanently invalidates an unused code. Only take an action after checking the customer's code, package, price and expiry.</div>
+  </div>
+</section>
+</main>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const SUPABASE_URL='https://sspzsscntnlaopfrgpvr.supabase.co';
+const SUPABASE_KEY='sb_publishable_eDoA81c2-EHz7PqGLwk1RA_PD5-RYGL';
+const supabase=createClient(SUPABASE_URL,SUPABASE_KEY);
+const api=SUPABASE_URL+'/functions/v1/reward-api';
+const $=id=>document.getElementById(id);
+let session=null,records=[];
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money=v=>v==null?'—':'PKR '+Number(v).toLocaleString('en-PK');
+const date=v=>v?new Date(v).toLocaleString('en-PK',{dateStyle:'medium',timeStyle:'short'}):'—';
+function setSignedIn(on){$('loginForm').hidden=on;$('authTools').hidden=!on;$('dashboard').hidden=!on;}
+function message(t){$('status').textContent=t;}
+async function apiCall(action,extra={}) {
+  if(!session?.access_token) throw new Error('Session expired. Please sign in again.');
+  const res=await fetch(api,{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+session.access_token},body:JSON.stringify({action,...extra})});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok) throw new Error(data.error||'Request failed ('+res.status+')');
+  return data;
+}
+function render(){
+  const pending=records.filter(r=>r.status==='unredeemed').length;
+  $('totalCount').textContent=records.length;
+  $('pendingCount').textContent=pending;
+  $('redeemedCount').textContent=records.filter(r=>r.status==='redeemed').length;
+  $('closedCount').textContent=records.filter(r=>['revoked','expired'].includes(r.status)).length;
+  const filter=$('statusFilter').value;
+  const visible=records.filter(r=>filter==='all'||r.status===filter);
+  $('rewardRows').innerHTML=visible.map(r=>{
+    const canAct=r.status==='unredeemed';
+    const pkg={landing:'Landing Page',custom:'Custom Coded Website',business:'Business Website',shopify:'Shopify Store'}[r.package_key]||r.package_key||'Not selected';
+    return '<tr>'+
+      '<td class="code-cell">'+esc(r.code)+'</td>'+
+      '<td>'+esc(r.discount_percent)+'%</td>'+
+      '<td>'+esc(pkg)+'</td>'+
+      '<td>'+money(r.package_price_pkr)+'</td>'+
+      '<td>'+money(r.discount_amount_pkr)+'</td>'+
+      '<td><b>'+money(r.final_price_pkr)+'</b></td>'+
+      '<td><span class="status-pill '+esc(r.status)+'">'+esc(r.status)+'</span></td>'+
+      '<td class="muted-cell">'+date(r.expires_at)+'</td>'+
+      '<td>'+(canAct?'<div class="row-actions"><button class="action-btn" data-action="redeem" data-id="'+esc(r.id)+'">Confirm</button><button class="action-btn danger" data-action="revoke" data-id="'+esc(r.id)+'">Reject</button></div>':'—')+'</td>'+
+    '</tr>';
+  }).join('')||'<tr><td class="empty-row" colspan="9">No rewards match this filter.</td></tr>';
+}
+async function load(){
+  message('Loading reward records…');
+  try{const data=await apiCall('admin-list');records=Array.isArray(data.rewards)?data.rewards:[];render();message('Loaded '+records.length+' reward record(s).');}
+  catch(e){message(e.message);if(/session|token|JWT|Admin access/i.test(e.message)){session=null;setSignedIn(false);}}
+}
+$('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();const btn=$('loginBtn');btn.disabled=true;message('Signing in…');
+  try{
+    const {data,error}=await supabase.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});
+    if(error)throw error;
+    session=data.session;$('password').value='';setSignedIn(true);await load();
+  }catch(err){message(err.message||'Sign-in failed.');}
+  finally{btn.disabled=false;}
+});
+$('refreshBtn').addEventListener('click',load);
+$('logoutBtn').addEventListener('click',async()=>{
+  await supabase.auth.signOut();session=null;records=[];setSignedIn(false);message('Signed out.');
+});
+$('statusFilter').addEventListener('change',render);
+$('rewardRows').addEventListener('click',async e=>{
+  const btn=e.target.closest('button[data-action]');if(!btn)return;
+  const item=records.find(r=>r.id===btn.dataset.id);if(!item)return;
+  const isConfirm=btn.dataset.action==='redeem';
+  const question=isConfirm
+    ?'Confirm redemption of '+item.code+'? This permanently marks the reward as redeemed.'
+    :'Reject '+item.code+'? This revokes the unused reward code and it cannot be used.';
+  if(!window.confirm(question))return;
+  btn.disabled=true;message((isConfirm?'Confirming ':'Rejecting ')+item.code+'…');
+  try{await apiCall(btn.dataset.action,{id:item.id});await load();}
+  catch(err){message(err.message);btn.disabled=false;}
+});
+supabase.auth.onAuthStateChange((_event,newSession)=>{session=newSession;if(!newSession){records=[];setSignedIn(false);}});
+</script>
+</body>
+</html>
