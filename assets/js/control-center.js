@@ -14,7 +14,7 @@ async function adminCheck(user){const {data,error}=await db.from('reward_admins'
 function signedIn(user){session=user; $('loginScreen').hidden=true;$('app').hidden=false;$('adminName').textContent=user.email||'Administrator';$('avatar').textContent=(user.email||'M').charAt(0).toUpperCase();}
 async function start(user){await adminCheck(user);signedIn(user);await Promise.all([loadServices(),loadPosts(),loadSettings()]);}
 $('loginForm').addEventListener('submit',async e=>{e.preventDefault();say('loginMessage','Signing in…');try{const {data,error}=await db.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});if(error)throw error;await start(data.user);}catch(err){say('loginMessage',err.message);}});
-$('googleLogin').addEventListener('click',async()=>{say('loginMessage','Redirecting to Google…');const {error}=await db.auth.signInWithOAuth({provider:'google',options:{redirectTo:window.location.href}});if(error)say('loginMessage',error.message);});
+$('googleLogin').addEventListener('click',async()=>{say('loginMessage','Redirecting to Google…');const {error}=await db.auth.signInWithOAuth({provider:'google',options:{redirectTo:'https://mudassar1109.github.io/portfolio-Linkdit/control-center.html'}});if(error)say('loginMessage',error.message);});
 $('logoutBtn').addEventListener('click',async()=>{await db.auth.signOut();location.reload();});
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{showView(b.dataset.view);document.querySelector('.sidebar').classList.remove('open');}));
 $('mobileMenu').addEventListener('click',()=>document.querySelector('.sidebar').classList.toggle('open'));
