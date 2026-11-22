@@ -753,3 +753,9 @@ body{
 @media(prefers-reduced-motion:reduce){
   .service-card,.project,.tech-card,.nav-links a,.footer-links a{transition:none!important}
 }
+
+/* Custom software offer card icon */
+.software-package-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 0 14px;border:1px solid rgba(0,217,255,.42);border-radius:16px;background:linear-gradient(145deg,rgba(0,217,255,.17),rgba(5,26,46,.7));color:#8cefff;box-shadow:0 10px 24px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.12)}
+.software-package-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.software-price-card .price-desc{min-height:0}
+.software-price-card .price-label{max-width:70%;line-height:1.4}
